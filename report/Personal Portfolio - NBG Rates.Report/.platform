@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Personal Portfolio - NBG Rates"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2e0f982b-7f12-4141-801c-5ade79c77fcf"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "ff179d036a07ee975d55",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 168.84135472370767,
+    "width": 225.88235294117646,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "საქართველოს ეროვნული ბანკი",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Georgia",
+                      "fontSize": "9pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "ზვიად გამსახურდიას სანაპირო ",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "8pt",
+                      "color": "#333333"
+                    }
+                  },
+                  {
+                    "value": "№1",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "8pt",
+                      "color": "#333333"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "0114",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "8pt",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": " თბილისი, საქართველო",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "8pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "ცხელი ხაზი: ",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "8pt",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": "(995 32) 2406406",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "8pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "*",
+                    "textStyle": {
+                      "fontFamily": "Wingdings",
+                      "fontSize": "9pt",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": ": ",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "8pt"
+                    }
+                  },
+                  {
+                    "value": "statistics@nbg.gov.ge",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "8pt"
+                    },
+                    "url": "mailto:statistics@nbg.gov.ge"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Web:",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "8pt"
+                    }
+                  },
+                  {
+                    "value": " "
+                  },
+                  {
+                    "value": "www.nbg.gov.ge",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "8pt",
+                      "color": "#0000ff"
+                    },
+                    "url": "https://www.nbg.gov.ge"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "მოგვწერეთ შეკითხვები",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontStyle": "italic",
+                      "fontSize": "8pt",
+                      "color": "#0000ff"
+                    },
+                    "url": "mailto:statistics@nbg.gov.ge"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Text box_Contact'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "f1eae71c0e90271ce78a",
+  "isHidden": true
+}

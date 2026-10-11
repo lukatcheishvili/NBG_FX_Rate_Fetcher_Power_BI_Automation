@@ -1,96 +1,92 @@
-# 📊 NBG FX Rate Fetcher — Power BI Automation
+# NBG FX Rate Fetcher: Power BI Automation
 
-> Automated National Bank of Georgia exchange rate integration for financial statement working files — no more manual lookups.
+A Power BI report that loads the official exchange rates of the National Bank of Georgia (NBG) directly from the bank's public files and presents them as a dashboard: daily rates, period-over-period changes against the lari, a daily table and monthly averages. It replaces the manual routine of looking up rates on the NBG website when preparing financial statement working files.
 
----
+## Why
 
-## 🧩 Overview
+Closing rates, average rates and transaction-date rates are needed every reporting period, for several currencies. Looking them up one by one on the NBG website is slow and easy to get wrong. This report pulls the full history (2001 to today) on refresh and makes any rate, change or monthly average available in a few clicks.
 
-Every accountant or financial analyst at a Georgian bank knows the pain: open a browser, navigate to the [National Bank of Georgia (NBG)](https://nbg.gov.ge/en/monetary-policy/currency) website, look up the exchange rate for a specific date, paste it into your working file, repeat for every financial statement period.
+## Report
 
-**This project eliminates that workflow entirely.**
+The report has three pages, each available in a dark and a light version.
 
-`NBG FX Rate Fetcher` is a Power BI report that connects directly to the NBG's public exchange rate data and surfaces the correct rate for any given date — ready to feed into your financial statement working files at JSC Bank of Georgia.
-
----
-
-## 🚀 Features
-
-- **Live NBG Rate Fetching** — Pulls exchange rates directly from the National Bank of Georgia data source
-- **Date-Specific Lookups** — Select any date and instantly get the official NBG rate for that period
-- **Multi-Currency Support** — Covers the major currencies used in financial statement reporting (USD, EUR, GBP, and more)
-- **Financial Statement Ready** — Designed specifically for working file use cases: translation rates, closing rates, average rates
-- **Zero Manual Entry** — No copy-pasting, no browser tabs, no human error
-
----
-
-## 🏦 Use Case
-
-When preparing financial statements at **JSC Bank of Georgia**, IFRS reporting and consolidation working files require exchange rates from the NBG for:
-
-| Rate Type | Purpose |
+| Page | Contents |
 |---|---|
-| **Closing Rate** | Balance Sheet translation as at period end |
-| **Average Rate** | P&L translation for the reporting period |
-| **Transaction Date Rate** | Specific transaction-level conversions |
+| Official rates (overview) | Rate cards for USD, EUR, GBP and RUB with the daily change; the selected currency against its base-date rate; percentage change of several currencies against GEL; latest official rates for every listed currency |
+| Daily table | Rates for every day in the selected period, with weekend rows dimmed (weekends carry Friday's rate) |
+| Monthly table | End-of-month, average, minimum and maximum rate per month; the current, unfinished month is excluded |
 
-Previously, each of these required a manual lookup on the NBG website. This Power BI file handles it automatically.
+Navigation and controls:
 
----
+- The tabs in the top bar switch between pages.
+- The sun / moon button switches between dark and light mode. Filter selections are kept.
+- The reset button restores the default filters; the info button shows a short description of the page.
+- The period buttons (1M, 3M, 6M, 1Y, 5Y, ALL, YTD) set the base date used by the charts. Defaults: 1Y, USD, and USD / EUR / GBP / TRY for comparison.
 
-## 📁 File Structure
+Labels follow NBG's own report and are in Georgian.
+
+## Data sources
+
+Both files are read directly from nbg.gov.ge on every refresh:
+
+| File | Coverage |
+|---|---|
+| `official-daily-exchange-ratesgeo.xlsx` | Current year, daily |
+| `exratesyearsgeo.xlsx` (sheet `2001-...`) | 2001 to the end of last year, daily |
+
+The currency list, quotation units (for example AMD per 1,000) and Georgian currency names are taken from the files' header rows, so new or discontinued currencies do not break the refresh. Where both files cover the same date, the current-year file is used. Rates are as published by NBG; for audit purposes, verify critical figures against [nbg.gov.ge](https://nbg.gov.ge/en/monetary-policy/currency).
+
+## Repository structure
 
 ```
-NBG-FX-Rate-Fetcher/
-│
-├── Personal_Portfolio_-_NBG_Rates.pbix   # Main Power BI report file
-└── README.md                             # You are here
+report/
+  Personal Portfolio - NBG Rates.pbip            Open this file in Power BI Desktop
+  Personal Portfolio - NBG Rates.Report/         Pages, visuals, bookmarks and theme (PBIR)
+  Personal Portfolio - NBG Rates.SemanticModel/  Tables, Power Query and DAX measures (TMDL)
+tools/
+  make_light_pages.py    Generates the light-mode pages from the dark ones
+  check_layout.py        Layout checks: bounds, overlaps, alignment, text fit, contrast
+  validate_report.py     Structural checks of the report definition
+tests/
+  visual_tests.dax       Data tests for each visual, with expected values
+docs/
+  decisions.md           Design and modelling decisions, conventions and change log
+  design/                Design-system references used for the dark and light themes
+reference/
+  nbg-report-definition/ NBG's public report definition used as the starting template
+  screenshots/           Screenshots of NBG's report used for comparison
+  nbg-daily-rates-sample.xlsx  Sample of the NBG daily rates file used to test the import
 ```
 
----
+The report is saved as a Power BI Project (PBIP), so every page, visual and measure is a plain text file that can be reviewed and versioned in git.
 
-## 🛠️ How to Use
+## Getting started
 
-1. **Open** `Personal_Portfolio_-_NBG_Rates.pbix` in Power BI Desktop
-2. **Refresh** the data to pull the latest rates from NBG
-3. **Select** your reporting date or date range using the date slicer
-4. **Read off** the rate(s) needed for your working file
-5. *(Optional)* Export or copy the rate directly into your Excel working file
+Requirements: Power BI Desktop (recent version) with internet access to nbg.gov.ge. Python 3.10+ is only needed for the maintenance scripts.
 
-> ⚠️ **Requirements:** Power BI Desktop (free) with internet access to reach the NBG data endpoint.
+1. Clone the repository.
+2. Open `report/Personal Portfolio - NBG Rates.pbip` in Power BI Desktop.
+3. Select Refresh. The first refresh downloads the full rate history and can take a minute or two.
+4. If prompted for data source credentials for nbg.gov.ge, choose Anonymous; set the privacy level to Public.
 
----
+## Maintaining the report
 
-## 🌐 Data Source
+The dark pages are the source of truth. The light pages are generated from them and should not be edited by hand.
 
-All exchange rates are sourced from the **National Bank of Georgia's** official public API / data feed:
+After changing the report, close Power BI Desktop and run:
 
-🔗 [https://nbg.gov.ge/en/monetary-policy/currency](https://nbg.gov.ge/en/monetary-policy/currency)
+```
+python tools/make_light_pages.py   # regenerate the light pages
+python tools/check_layout.py       # must report PASS
+python tools/validate_report.py    # must report no problems
+```
 
-Rates are official, auditable, and consistent with what NBG publishes for regulatory and financial reporting purposes.
+Then reopen the project in Power BI Desktop, refresh, and run the queries in `tests/visual_tests.dax` from the DAX query view. Each query reproduces what one visual displays under the default filters and lists the expected values.
 
----
+Power BI Desktop must be closed while files under `report/` are edited outside of Desktop; otherwise Desktop may overwrite the changes when it saves.
 
-## 💡 Background & Motivation
+## Notes
 
-This tool was built out of a real day-to-day frustration in financial reporting work. The NBG website works fine — but fetching rates manually for every statement, every period, every currency is repetitive and error-prone.
-
-Power BI's data connectivity makes it trivial to automate this fetch, apply date logic, and surface exactly the rate you need — making working file preparation significantly faster and more reliable.
-
----
-
-## 📌 Notes
-
-- This is a **personal productivity project**, not an official tool of JSC Bank of Georgia
-- Rates reflect NBG official published rates and may differ slightly from interbank or market rates
-- Always verify critical rates against the NBG website for audit trail purposes
-
----
-
-## 👤 Author
-
-Built for personal use to support financial statement working files at **JSC Bank of Georgia**.
-
----
-
-*If this saves you even 10 minutes per reporting period — it's done its job.*
+- This is a personal productivity project. It is not an official tool of the National Bank of Georgia or of JSC Bank of Georgia, and it is not affiliated with either.
+- The report layout is based on NBG's public "Official Exchange Rates" report; NBG's logo and branding are not used.
+- NBG official rates may differ from interbank or market rates.

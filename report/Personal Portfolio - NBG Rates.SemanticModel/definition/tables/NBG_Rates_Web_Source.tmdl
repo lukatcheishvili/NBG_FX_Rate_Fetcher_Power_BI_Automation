@@ -1,0 +1,58 @@
+table NBG_Rates_Web_Source
+	isHidden
+	lineageTag: afec9769-6c5e-4aba-8640-e0a69dba95b4
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: dd-mmm-yy
+		lineageTag: 258238ca-beb6-4500-b87e-31ab84286a8c
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Currency
+		dataType: string
+		isHidden
+		lineageTag: 022d7a5d-2304-473e-a547-0ed38307bbed
+		summarizeBy: none
+		sourceColumn: Currency
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rate
+		dataType: double
+		isHidden
+		formatString: 0.0000
+		lineageTag: 94362cc5-59c1-40cd-a2fb-7793885366f3
+		summarizeBy: sum
+		sourceColumn: Rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition NBG_Rates_Web_Source = m
+		mode: import
+		source =
+				let
+				    Rates = fnNbgParseSheet(NBG_Live_Sheet)[Rates],
+				    Sorted = Table.Sort(Rates, {{"Date", Order.Descending}, {"Currency", Order.Ascending}})
+				in
+				    Sorted
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

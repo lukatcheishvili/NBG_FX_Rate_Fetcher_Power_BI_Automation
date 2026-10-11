@@ -1,0 +1,24 @@
+relationship 5f878d63-8172-6099-243e-b11f451093ae
+	fromColumn: NBG_Rates_Web_Source.Date
+	toColumn: Advanced_Calendar.Date
+
+relationship 64a26b18-3026-bab6-1e00-91db8669fa03
+	fromColumn: NBG_Rates_Historical_Rates.Date
+	toColumn: Advanced_Calendar.Date
+
+relationship 2bd2a607-66e5-57d2-12ca-aca72f068e2b
+	fromColumn: NBG_Rates.Date
+	toColumn: Advanced_Calendar.Date
+
+relationship 1bf397ea-fea8-973b-4cfc-0e1f26b50c20
+	fromColumn: NBG_Rates.Currency
+	toColumn: Mapping.Currency
+
+relationship ca6bed5f-1206-3c37-a9d1-706bde7cefb1
+	fromColumn: NBG_Rates_Historical_Rates.Currency
+	toColumn: Mapping.Currency
+
+relationship 4d5cec58-7154-3ef3-a18f-d27872466166
+	fromColumn: NBG_Rates_Web_Source.Currency
+	toColumn: Mapping.Currency
+

@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1302.5714285714278,
+            "y": 0
+          },
+          "nodeIndex": "Metrics",
+          "nodeLineageTag": "13fd210a-3eb9-49a4-bdde-65b532a614b4",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "Advanced_Calendar",
+          "nodeLineageTag": "e8bf3add-9149-40c7-bc39-9f8746f163ad",
+          "size": {
+            "height": 582.85714285714255,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 309.42857142857173,
+            "y": 0
+          },
+          "nodeIndex": "Mapping",
+          "nodeLineageTag": "2e901373-35e3-4fd9-8b8d-d05d11f27f50",
+          "size": {
+            "height": 179.14285714285711,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 300,
+            "y": 788.57142857142787
+          },
+          "nodeIndex": "NBG_Rates_Web_Source",
+          "nodeLineageTag": "afec9769-6c5e-4aba-8640-e0a69dba95b4",
+          "size": {
+            "height": 176.28571428571425,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 596.28571428571468,
+            "y": 788.57142857142776
+          },
+          "nodeIndex": "NBG_Rates",
+          "nodeLineageTag": "adb6bf7e-10f7-4294-ac6f-12286084fd5d",
+          "size": {
+            "height": 174.8571428571428,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 788.57142857142787
+          },
+          "nodeIndex": "NBG_Rates_Historical_Rates",
+          "nodeLineageTag": "930bc625-f341-45a1-89d0-1e63617108d6",
+          "size": {
+            "height": 174.85714285714283,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1299.4701362202927,
+            "y": 239.24192842248317
+          },
+          "nodeIndex": "Frequency",
+          "nodeLineageTag": "e8ed6d11-a1fa-4b44-9993-f1697fc8c18f",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 7
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 49.668880730678239,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

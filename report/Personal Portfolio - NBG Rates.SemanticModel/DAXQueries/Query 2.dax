@@ -1,0 +1,29 @@
+EVALUATE
+ADDCOLUMNS(
+    CALENDAR(
+        MIN(NBG_Rates[Date]),
+        MAX(NBG_Rates[Date])
+    ),
+    // 🔹 Custom formats at the beginning
+    "Date_dd_mmm_yy", FORMAT([Date], "dd-mmm-yy"),
+    "Date_mmm_yy", FORMAT([Date], "mmm-yy"),
+    "Date_dd_mmm", FORMAT([Date], "dd-mmm"),
+
+    // 🔹 Existing calendar columns
+    "DateAsInteger", FORMAT([Date], "yyyyMMdd"),
+    "Year", YEAR([Date]),
+    "MonthNumber", MONTH([Date]),
+    "YearMonthNumber", FORMAT([Date], "yyyy.MM"),
+    "YearMonthShort", FORMAT([Date], "MM.yyyy"),
+    "MonthYear", FORMAT([Date], "MMMM yyyy"),
+    "MonthNameShort", FORMAT([Date], "MMM"),
+    "Month", FORMAT([Date], "MMMM"),
+    "WeekNumber", WEEKNUM([Date]),
+    "DayOfWeekNumber", WEEKDAY([Date]),
+    "DayOfWeekShort", FORMAT([Date], "ddd"),
+    "DayOfWeek", FORMAT([Date], "dddd"),
+    "Quarter", "Q" & FORMAT([Date], "Q"),
+    "YearQuarter", FORMAT([Date], "yyyy") & "/Q" & FORMAT([Date], "Q"),
+    "Day", DAY([Date])
+)
+

@@ -1,0 +1,680 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Info_Page_3",
+  "name": "94408e10113a1d415339",
+  "options": {
+    "targetVisualNames": [
+      "2e59356af0565cdc7942"
+    ],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "5b2b60aaacad67c46039",
+    "sections": {
+      "5b2b60aaacad67c46039": {
+        "visualContainers": {
+          "10db124fc3d8497cb423": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "1fa42b415c072a11c0b8",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Between'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "26f40328378dfee0a4b8": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a96bb1029e53701d9c46",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CL_Cur"
+                        }
+                      },
+                      "Property": "Ccde_Desc"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "c",
+                                "Entity": "CL_Cur",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "c"
+                                            }
+                                          },
+                                          "Property": "Ccde_Desc"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'EUR ევრო'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'GBP დიდი ბრიტანეთის გირვანქა სტერლინგი'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'USD აშშ დოლარი'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'TRY თურქული ლირა'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Basic'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CL_Cur"
+                        }
+                      },
+                      "Property": "Ccde_Desc"
+                    }
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Values"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "CL_Cur.Ccde_Desc"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ]
+            }
+          },
+          "129313e0e0f4c1e7d97e": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "9e009d368c7dd9235aba": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "6a3bb0a06a2e4312a471": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "2e59356af0565cdc7942": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "6d6cfe8977918f9e6a6a": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "77aebdf7c7713aae4c71": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "e66a5fe499684310e152": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "ef54f020bb1725cecd6a": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "25f4675b380f95549bce": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "23f8a16cd144dbc86b13": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "38bcb350e9b64f9a5291": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "79e9b3a997285dba8315": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "6cea961d92185f932246": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "feaebd1c37d1e51f5268": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "0dfb2f572210c9f1252a": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "b9d869c9efcfd5b91544": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter9cf5e61e4c23fb671d30",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_Measures",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "Flag_EOMonth"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Flag_EOMonth"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "b5848960c941ddeead92",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RateDD"
+                        }
+                      },
+                      "Property": "K"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b8e0c26d5b6686668837",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CL_Cur"
+                        }
+                      },
+                      "Property": "Code"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c3ae288785309c914a63",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CL_Cur"
+                        }
+                      },
+                      "Property": "Description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "bc1c7889055cdc497d0e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "Year-MM"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "651bfe47907a909bc47a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "RateDD"
+                            }
+                          },
+                          "Property": "Rate"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c7558a14766073dd08bd",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "RateDD"
+                            }
+                          },
+                          "Property": "Rate"
+                        }
+                      },
+                      "Function": 4
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f636c8e93ba8d07b0d83",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "RateDD"
+                            }
+                          },
+                          "Property": "Rate"
+                        }
+                      },
+                      "Function": 1
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b6786ab54d0980ab636a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "End_of_Month_ExRate"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CL_Cur"
+                        }
+                      },
+                      "Property": "Description"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CL_Cur"
+                        }
+                      },
+                      "Property": "Code"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RateDD"
+                        }
+                      },
+                      "Property": "K"
+                    }
+                  }
+                ],
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "Year-MM"
+                    }
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Rows"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "Calendar.Year-MM"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Calendar"
+                              }
+                            },
+                            "Property": "Year-MM"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ]
+            }
+          },
+          "cd77e0d542043a435673": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "8b7b274229225b8d3400": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "f25215c5503b4cc423dc": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "4e9ebb585c14c1566610": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "95649abae7a053bfc04b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "a5bbd1feb286ae45b562": {
+            "isHidden": true
+          },
+          "3d175ceff26a2ea8f471": {
+            "isHidden": false
+          },
+          "0b2d56d9e2cf2ce52da0": {
+            "isHidden": true
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

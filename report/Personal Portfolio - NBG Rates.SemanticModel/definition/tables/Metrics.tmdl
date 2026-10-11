@@ -1,0 +1,571 @@
+table Metrics
+	lineageTag: 13fd210a-3eb9-49a4-bdde-65b532a614b4
+
+	measure Filtered_Rate_Values = ```
+			
+			VAR SelectedDateRange = VALUES(NBG_Rates[Date])
+			VAR SelectedCurrencies = VALUES(NBG_Rates[Currency])
+			
+			RETURN 
+			CALCULATE(
+			    SUM(NBG_Rates[Rate]),
+			    NBG_Rates[Date] IN SelectedDateRange,
+			    NBG_Rates[Currency] IN SelectedCurrencies
+			)
+			```
+		formatString: 0
+		lineageTag: c174c936-90eb-498e-904c-bdad40f9143b
+
+	measure Selected_Currency_Info_Title = ```
+			
+			VAR SelectedCurrency = SELECTEDVALUE(NBG_Rates[Currency])
+			VAR CurrencyName = LOOKUPVALUE(Mapping[Currency_Long], Mapping[Currency], SelectedCurrency)
+			
+			RETURN 
+			"1 " & SelectedCurrency & " " & CurrencyName & " : GEL"
+			
+			```
+		displayFolder: For Graph Titles
+		lineageTag: 3b77ba31-9fe1-492f-af3c-15c2cff5d70e
+
+	measure %_Rate_Change = ```
+			
+			VAR CurrentDate = MAX(NBG_Rates[Date])
+			VAR PrevDate = 
+			    CALCULATE(
+			        MAX(NBG_Rates[Date]),
+			        FILTER(
+			            ALL(NBG_Rates),
+			            NBG_Rates[Date] < CurrentDate
+			        )
+			    )
+			VAR CurrentRate = 
+			    CALCULATE(
+			        AVERAGE(NBG_Rates[Normalized_Rate]),
+			        NBG_Rates[Date] = CurrentDate
+			    )
+			VAR PrevRate = 
+			    CALCULATE(
+			        AVERAGE(NBG_Rates[Normalized_Rate]),
+			        NBG_Rates[Date] = PrevDate
+			    )
+			
+			RETURN 
+			DIVIDE(CurrentRate - PrevRate, PrevRate)
+			
+			
+			```
+		lineageTag: 55d21e68-e532-4257-8684-68a21091e394
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Latest_Rate = ```
+			
+			CALCULATE(
+			    AVERAGE(NBG_Rates[Rate]),
+			    NBG_Rates[Date] = TODAY()
+			)
+			
+			```
+		lineageTag: 21efa61e-1659-4be8-9d39-321c3aae2ede
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Rate_Change_Daily = ```
+			
+			VAR TodayDate = TODAY()
+			
+			VAR PrevDate = 
+			    CALCULATE(
+			        MAX(NBG_Rates[Date]),
+			        FILTER(
+			            ALL(NBG_Rates),
+			            NBG_Rates[Date] < TodayDate
+			        )
+			    )
+			
+			VAR TodayRate = 
+			    CALCULATE(
+			        AVERAGE(NBG_Rates[Rate]),
+			        NBG_Rates[Date] = TodayDate
+			    )
+			
+			VAR PrevRate = 
+			    CALCULATE(
+			        AVERAGE(NBG_Rates[Rate]),
+			        NBG_Rates[Date] = PrevDate
+			    )
+			
+			RETURN 
+			TodayRate - PrevRate
+			
+			```
+		lineageTag: a6853ad3-d1fc-486e-ae28-d4f2114fa627
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Latest_Normalized_Rate_USD = ```
+			
+			VAR MaxDate =
+			    CALCULATE(
+			        MAX(NBG_Rates[Date]),
+			        NBG_Rates[Currency] = "USD"
+			    )
+			RETURN
+			CALCULATE(
+			    AVERAGE(NBG_Rates[Normalized_Rate]),
+			    NBG_Rates[Currency] = "USD",
+			    NBG_Rates[Date] = MaxDate
+			)
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: 5a0a38ea-f637-4b51-84c9-3909f1fab2f5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Latest_Normalized_Rate_EUR = ```
+			
+			VAR MaxDate =
+			    CALCULATE(
+			        MAX(NBG_Rates[Date]),
+			        NBG_Rates[Currency] = "EUR"
+			    )
+			RETURN
+			CALCULATE(
+			    AVERAGE(NBG_Rates[Normalized_Rate]),
+			    NBG_Rates[Currency] = "EUR",
+			    NBG_Rates[Date] = MaxDate
+			)
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: fb1f5786-1509-44ab-96e4-438c26920640
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Latest_Normalized_Rate_GBP = ```
+			
+			VAR MaxDate =
+			    CALCULATE(
+			        MAX(NBG_Rates[Date]),
+			        NBG_Rates[Currency] = "GBP"
+			    )
+			RETURN
+			CALCULATE(
+			    AVERAGE(NBG_Rates[Normalized_Rate]),
+			    NBG_Rates[Currency] = "GBP",
+			    NBG_Rates[Date] = MaxDate
+			)
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: f52b21db-6097-4afc-8b2b-06337988d91b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Latest_Normalized_Rate_BYN = ```
+			
+			VAR MaxDate =
+			    CALCULATE(
+			        MAX(NBG_Rates[Date]),
+			        NBG_Rates[Currency] = "BYN"
+			    )
+			RETURN
+			CALCULATE(
+			    AVERAGE(NBG_Rates[Normalized_Rate]),
+			    NBG_Rates[Currency] = "BYN",
+			    NBG_Rates[Date] = MaxDate
+			)
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: 04195da3-aaca-4d35-9a6f-d6852c2c0117
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Latest_Normalized_Rate_AMD = ```
+			
+			VAR MaxDate =
+			    CALCULATE(
+			        MAX(NBG_Rates[Date]),
+			        NBG_Rates[Currency] = "AMD"
+			    )
+			RETURN
+			CALCULATE(
+			    AVERAGE(NBG_Rates[Normalized_Rate]),
+			    NBG_Rates[Currency] = "AMD",
+			    NBG_Rates[Date] = MaxDate
+			)
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: 4dcbf4f2-9d0a-44a2-b898-99c69e477357
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Daily_Change_USD = ```
+			
+			VAR MaxDate =
+			    CALCULATE(
+			        MAX(NBG_Rates[Date]),
+			        NBG_Rates[Currency] = "USD"
+			    )
+			VAR PrevDate =
+			    CALCULATETABLE(
+			        TOPN(1, FILTER(ALL(NBG_Rates), NBG_Rates[Currency] = "USD" && NBG_Rates[Date] < MaxDate), NBG_Rates[Date], DESC)
+			    )
+			VAR CurrentRate =
+			    CALCULATE(
+			        AVERAGE(NBG_Rates[Normalized_Rate]),
+			        NBG_Rates[Currency] = "USD",
+			        NBG_Rates[Date] = MaxDate
+			    )
+			VAR PrevRate =
+			    CALCULATE(
+			        AVERAGE(NBG_Rates[Normalized_Rate]),
+			        FILTER(PrevDate, NBG_Rates[Currency] = "USD")
+			    )
+			RETURN
+			DIVIDE(CurrentRate - PrevRate, PrevRate)
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: 824b1245-e447-406a-876d-3dc1f2d37583
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Daily_Change_EUR = ```
+			
+			VAR MaxDate = CALCULATE(MAX(NBG_Rates[Date]), NBG_Rates[Currency] = "EUR")
+			VAR PrevDate = CALCULATETABLE(
+			    TOPN(1, FILTER(ALL(NBG_Rates), NBG_Rates[Currency] = "EUR" && NBG_Rates[Date] < MaxDate), NBG_Rates[Date], DESC)
+			)
+			VAR CurrentRate = CALCULATE(AVERAGE(NBG_Rates[Normalized_Rate]), NBG_Rates[Currency] = "EUR", NBG_Rates[Date] = MaxDate)
+			VAR PrevRate = CALCULATE(AVERAGE(NBG_Rates[Normalized_Rate]), FILTER(PrevDate, NBG_Rates[Currency] = "EUR"))
+			RETURN DIVIDE(CurrentRate - PrevRate, PrevRate)
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: 99dc04a9-ee8c-4854-b1bf-f3a11265c2fc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Daily_Change_GBP = ```
+			
+			VAR MaxDate = CALCULATE(MAX(NBG_Rates[Date]), NBG_Rates[Currency] = "GBP")
+			VAR PrevDate = CALCULATETABLE(
+			    TOPN(1, FILTER(ALL(NBG_Rates), NBG_Rates[Currency] = "GBP" && NBG_Rates[Date] < MaxDate), NBG_Rates[Date], DESC)
+			)
+			VAR CurrentRate = CALCULATE(AVERAGE(NBG_Rates[Normalized_Rate]), NBG_Rates[Currency] = "GBP", NBG_Rates[Date] = MaxDate)
+			VAR PrevRate = CALCULATE(AVERAGE(NBG_Rates[Normalized_Rate]), FILTER(PrevDate, NBG_Rates[Currency] = "GBP"))
+			RETURN DIVIDE(CurrentRate - PrevRate, PrevRate)
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: 7e7403e8-069d-4fb6-8044-8e8d0f2a4fd1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Daily_Change_BYN = ```
+			
+			VAR MaxDate = CALCULATE(MAX(NBG_Rates[Date]), NBG_Rates[Currency] = "BYN")
+			VAR PrevDate = CALCULATETABLE(
+			    TOPN(1, FILTER(ALL(NBG_Rates), NBG_Rates[Currency] = "BYN" && NBG_Rates[Date] < MaxDate), NBG_Rates[Date], DESC)
+			)
+			VAR CurrentRate = CALCULATE(AVERAGE(NBG_Rates[Normalized_Rate]), NBG_Rates[Currency] = "BYN", NBG_Rates[Date] = MaxDate)
+			VAR PrevRate = CALCULATE(AVERAGE(NBG_Rates[Normalized_Rate]), FILTER(PrevDate, NBG_Rates[Currency] = "BYN"))
+			RETURN DIVIDE(CurrentRate - PrevRate, PrevRate)
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: 07b4f906-4073-41ac-9071-ff02795b4db9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Daily_Change_AMD = ```
+			
+			VAR MaxDate = CALCULATE(MAX(NBG_Rates[Date]), NBG_Rates[Currency] = "AMD")
+			VAR PrevDate = CALCULATETABLE(
+			    TOPN(1, FILTER(ALL(NBG_Rates), NBG_Rates[Currency] = "AMD" && NBG_Rates[Date] < MaxDate), NBG_Rates[Date], DESC)
+			)
+			VAR CurrentRate = CALCULATE(AVERAGE(NBG_Rates[Normalized_Rate]), NBG_Rates[Currency] = "AMD", NBG_Rates[Date] = MaxDate)
+			VAR PrevRate = CALCULATE(AVERAGE(NBG_Rates[Normalized_Rate]), FILTER(PrevDate, NBG_Rates[Currency] = "AMD"))
+			RETURN DIVIDE(CurrentRate - PrevRate, PrevRate)
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: eb4cf9a6-bf46-4a42-a1d4-a9314b2d7c50
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AMD_Change_With_Arrow = ```
+			
+			VAR Change = [Daily_Change_AMD]
+			VAR Arrow = 
+			    SWITCH(
+			        TRUE(),
+			        Change > 0, UNICHAR(9650),   // Up
+			        Change < 0, UNICHAR(9660),   // Down
+			        UNICHAR(8596)                // Flat
+			    )
+			RETURN 
+			FORMAT(Change, "0.0000%") & " " & Arrow
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: a8757867-678e-4609-b2aa-9020275fa029
+
+	measure BYN_Change_With_Arrow = ```
+			
+			VAR Change = [Daily_Change_BYN]
+			VAR Arrow = 
+			    SWITCH(
+			        TRUE(),
+			        Change > 0, UNICHAR(9650),   // Up
+			        Change < 0, UNICHAR(9660),   // Down
+			        UNICHAR(8596)                // Flat
+			    )
+			RETURN 
+			FORMAT(Change, "0.0000%") & " " & Arrow
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: c58d64a0-cffb-41ee-bb8b-905f8858a757
+
+	measure EUR_Change_With_Arrow = ```
+			
+			VAR Change = [Daily_Change_EUR]
+			VAR Arrow = 
+			    SWITCH(
+			        TRUE(),
+			        Change > 0, UNICHAR(9650),   // Up
+			        Change < 0, UNICHAR(9660),   // Down
+			        UNICHAR(8596)                // Flat
+			    )
+			RETURN 
+			FORMAT(Change, "0.0000%") & " " & Arrow
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: 7ca5e4af-ee05-47d2-8199-47fd78611e64
+
+	measure GBP_Change_With_Arrow = ```
+			
+			VAR Change = [Daily_Change_GBP]
+			VAR Arrow = 
+			    SWITCH(
+			        TRUE(),
+			        Change > 0, UNICHAR(9650),   // Up
+			        Change < 0, UNICHAR(9660),   // Down
+			        UNICHAR(8596)                // Flat
+			    )
+			RETURN 
+			FORMAT(Change, "0.0000%") & " " & Arrow
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: 4062a280-a228-4c55-9cdf-4b4f78413886
+
+	measure USD_Change_With_Arrow = ```
+			
+			VAR Change = [Daily_Change_USD]
+			VAR Arrow = 
+			    SWITCH(
+			        TRUE(),
+			        Change > 0, UNICHAR(9650),   // Up
+			        Change < 0, UNICHAR(9660),   // Down
+			        UNICHAR(8596)                // Flat
+			    )
+			RETURN 
+			FORMAT(Change, "0.0000%") & " " & Arrow
+			
+			```
+		displayFolder: Latest 5 Currency Rates for Lion Finance Group PLC
+		lineageTag: 64c2f4e6-e794-42d0-b957-6aed02ec687b
+
+	measure Daily_%_Change_in_FX_Rates_Against_GEL_Title = ```
+			
+			VAR MaxDate = CALCULATE(MAX(NBG_Rates[Date]))
+			RETURN 
+			"Daily % Change in FX Rates Against GEL - Base Date : " & FORMAT(MaxDate, "DD MMM YY")
+			
+			```
+		displayFolder: For Graph Titles
+		lineageTag: 3c37b676-fdf0-4953-bbd8-1df1b014873e
+
+	measure Last_Date =
+			// Latest rate date in the current date filter, across the selected currencies (so retired ones show blank)
+			CALCULATE ( MAX ( NBG_Rates[Date] ), ALLSELECTED ( Mapping ) )
+		formatString: dd-MM-yyyy
+		displayFolder: NBG Report
+		lineageTag: 3fa77646-2499-4c82-8aea-786dfa055592
+
+	measure Window_End = CALCULATE ( MAX ( NBG_Rates[Date] ), ALLSELECTED ( Advanced_Calendar ), ALLSELECTED ( Mapping ) )
+		formatString: dd-MM-yyyy
+		displayFolder: NBG Report
+		lineageTag: 787fae74-d35c-45b6-bca5-fd1ecda4ff4c
+
+	measure Window_Start =
+			VAR _end = [Window_End]
+			VAR _sliceStart = CALCULATE ( MIN ( Advanced_Calendar[Date] ), ALLSELECTED ( Advanced_Calendar ) )
+			VAR _start =
+			    SWITCH (
+			        SELECTEDVALUE ( Frequency[Period], "ALL" ),
+			        "1M", EDATE ( _end, -1 ),
+			        "3M", EDATE ( _end, -3 ),
+			        "6M", EDATE ( _end, -6 ),
+			        "1Y", EDATE ( _end, -12 ),
+			        "5Y", EDATE ( _end, -60 ),
+			        "YTD", DATE ( YEAR ( _end ), 1, 1 ),
+			        _sliceStart
+			    )
+			RETURN MAX ( _start, _sliceStart )
+		formatString: dd-MM-yyyy
+		displayFolder: NBG Report
+		lineageTag: bd08c26e-7013-45bd-b1cd-14b585519570
+
+	measure Freq_Filter =
+			VAR _d = MAX ( Advanced_Calendar[Date] )
+			RETURN IF ( _d >= [Window_Start] && _d <= [Window_End], 1, 0 )
+		formatString: 0
+		displayFolder: NBG Report
+		lineageTag: d52e13b6-aac9-4486-8e77-bb360ce30446
+
+	measure Base_Date = "საბაზისო თარიღი " & FORMAT ( [Window_Start], "dd-MM-yyyy" )
+		displayFolder: NBG Report
+		lineageTag: acf22e87-8a25-4e58-8bd6-b13e2db4beab
+
+	measure Base_Date_Rate =
+			// Rate (per K) on the first NBG date of the window, drawn as a flat line
+			VAR _start = [Window_Start]
+			VAR _baseDate = CALCULATE ( MIN ( NBG_Rates[Date] ), REMOVEFILTERS ( Advanced_Calendar ), NBG_Rates[Date] >= _start )
+			RETURN
+			    IF (
+			        [Freq_Filter] = 1,
+			        CALCULATE ( AVERAGE ( NBG_Rates[Rate] ), REMOVEFILTERS ( Advanced_Calendar ), NBG_Rates[Date] = _baseDate )
+			    )
+		formatString: 0.0000
+		displayFolder: NBG Report
+		lineageTag: f3fd40ba-c438-4155-97d1-cddfb331d4bf
+
+	measure Growth_R =
+			VAR _current = AVERAGE ( NBG_Rates[Rate] )
+			VAR _base = [Base_Date_Rate]
+			RETURN IF ( NOT ISBLANK ( _current ), DIVIDE ( _current - _base, _base ) )
+		formatString: 0%
+		displayFolder: NBG Report
+		lineageTag: 448afc4f-383e-432a-ba8a-6b63b22ebbf7
+
+	measure Last_Date_Rate =
+			// Per 1 unit (USD 2.6005, AMD 0.0072)
+			VAR _lastDate = [Last_Date]
+			RETURN CALCULATE ( AVERAGE ( NBG_Rates[Normalized_Rate] ), NBG_Rates[Date] = _lastDate )
+		formatString: 0.0000
+		displayFolder: NBG Report
+		lineageTag: 9560fcb0-3507-4193-8569-85e0af9eefe6
+
+	measure Rate_Diff =
+			// Change vs the previous weekday: weekend and Monday dates carry the rate NBG set on Friday,
+			// so 12/10/2026 (Mon) compares with 09/10/2026 (Fri). Public holidays are not excluded.
+			VAR _current = [Last_Date_Rate]
+			VAR _prevDate = [Prev_Date]
+			VAR _previous = CALCULATE ( AVERAGE ( NBG_Rates[Normalized_Rate] ), REMOVEFILTERS ( Advanced_Calendar ), NBG_Rates[Date] = _prevDate )
+			RETURN IF ( NOT ISBLANK ( _current ) && NOT ISBLANK ( _previous ), _current - _previous )
+		formatString: 0.0000
+		displayFolder: NBG Report
+		lineageTag: 2e1473ca-cb31-4ad2-8009-86c9d5c7db94
+
+	measure End_of_Month_ExRate =
+			// Per K, on the last date in the month
+			VAR _lastDate = MAX ( NBG_Rates[Date] )
+			RETURN CALCULATE ( AVERAGE ( NBG_Rates[Rate] ), NBG_Rates[Date] = _lastDate )
+		formatString: 0.0000
+		displayFolder: NBG Report
+		lineageTag: 794b3cf6-c279-47ba-bbfe-e8e7e2242c38
+
+	measure Flag_EOMonth =
+			// 0 for the current, unfinished month
+			VAR _monthEnd = EOMONTH ( MAX ( Advanced_Calendar[Date] ), 0 )
+			VAR _lastDate = CALCULATE ( MAX ( NBG_Rates[Date] ), REMOVEFILTERS ( Advanced_Calendar ), REMOVEFILTERS ( Mapping ) )
+			RETURN IF ( _monthEnd <= _lastDate, 1, 0 )
+		formatString: 0
+		displayFolder: NBG Report
+		lineageTag: 0bc0a748-3587-43b0-96bc-45a9716b8b87
+
+	measure Title_Cur_to_Gel =
+			SELECTEDVALUE ( Mapping[Division] ) & " " & SELECTEDVALUE ( Mapping[Currency] ) & " "
+			    & SELECTEDVALUE ( Mapping[Currency_Long] ) & " : GEL"
+		displayFolder: NBG Report
+		lineageTag: 398f50b5-1e51-40fd-9212-2df12c809eaf
+
+	measure Title_Ex_Rate = "ოფიციალური გაცვლითი კურსი · " & FORMAT ( [Window_End], "dd-MM-yyyy" )
+		displayFolder: NBG Report
+		lineageTag: cc8ec0a1-12e7-4275-bb2a-24400bd10ddc
+
+	measure Prev_Date =
+			// Previous weekday before Last_Date: weekend and Monday dates carry Friday's rate
+			VAR _lastDate = [Last_Date]
+			RETURN
+			    CALCULATE (
+			        MAX ( NBG_Rates[Date] ),
+			        REMOVEFILTERS ( Advanced_Calendar ),
+			        NBG_Rates[Date] < _lastDate,
+			        WEEKDAY ( NBG_Rates[Date], 2 ) <= 5
+			    )
+		formatString: dd-MM-yyyy
+		displayFolder: NBG Report
+		lineageTag: 6b1f0d0e-3c4a-4f5e-9a51-2f7c8d9e0a11
+
+	measure Rate_Diff_Label =
+			// Arrow + sign so the change never relies on colour alone (KPI cards)
+			VAR _d = ROUND ( [Rate_Diff], 4 )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        ISBLANK ( [Rate_Diff] ), BLANK (),
+			        _d > 0, "▲ +" & FORMAT ( _d, "0.0000" ),
+			        _d < 0, "▼ −" & FORMAT ( ABS ( _d ), "0.0000" ),
+			        "• 0.0000"
+			    )
+		displayFolder: NBG Report
+		lineageTag: 0c2d7a51-8e43-4b6f-a1d2-3e4f5a6b7c80
+
+	measure Compare_Caption = FORMAT ( [Prev_Date], "dd-MM-yyyy" ) & "-თან შედარებით"
+		displayFolder: NBG Report
+		lineageTag: 9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d
+
+	measure Last_Update_Label = FORMAT ( [Window_End], "dd-MM-yyyy" )
+		displayFolder: NBG Report
+		lineageTag: 4d3c2b1a-0f9e-4d8c-b7a6-5f4e3d2c1b0a
+
+	measure Weekend_Font_Color =
+			// Daily table: weekend rows repeat Friday's rate, so they are dimmed
+			IF ( WEEKDAY ( MAX ( Advanced_Calendar[Date] ), 2 ) > 5, "#666666", "#FFFFFF" )
+		displayFolder: NBG Report
+		lineageTag: 7e6f5a4b-3c2d-4e1f-9a0b-8c7d6e5f4a3b
+
+	measure Weekend_Font_Color_Light =
+			// Light-mode twin of Weekend_Font_Color (used by the generated light pages)
+			IF ( WEEKDAY ( MAX ( Advanced_Calendar[Date] ), 2 ) > 5, "#8A857C", "#22201C" )
+		displayFolder: NBG Report
+		lineageTag: 2f4e6a8c-1b3d-4f5a-9c7e-0d2b4f6a8c1e
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: 364fbb14-77e2-4c4a-b4f8-fb6a274887ad
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Metrics = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = d40a238885e341f39bd03332375e1531
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

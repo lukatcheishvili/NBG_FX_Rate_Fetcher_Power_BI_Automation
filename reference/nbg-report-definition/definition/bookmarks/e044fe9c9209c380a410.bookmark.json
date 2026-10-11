@@ -1,0 +1,1261 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Contact_Page_1",
+  "name": "e044fe9c9209c380a410",
+  "options": {
+    "targetVisualNames": [],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "c3f04a68e646beb08f26",
+    "sections": {
+      "c3f04a68e646beb08f26": {
+        "visualContainers": {
+          "9f3a297c37d84a74608c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ec23de47401542055d01",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Between'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendar"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "fec17de6450d6443761d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d7583369a4081706e897",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "r",
+                        "Entity": "RateDD",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Aggregation": {
+                                    "Expression": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "r"
+                                          }
+                                        },
+                                        "Property": "Rate"
+                                      }
+                                    },
+                                    "Function": 1
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "RateDD"
+                            }
+                          },
+                          "Property": "Rate"
+                        }
+                      },
+                      "Function": 1
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "Filtereaf1f128f4a4d13afac4",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "r",
+                        "Entity": "RateDD",
+                        "Type": 0
+                      },
+                      {
+                        "Name": "_",
+                        "Entity": "_Measures",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "Freq_Filter"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Freq_Filter"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "a3fa1a3a00700008e25e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RateDD"
+                        }
+                      },
+                      "Property": "DateDD"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a8e3bf0433c4516eb874",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Base_Date_Rate"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8d911bf14c8dd1547714",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CL_Cur"
+                            }
+                          },
+                          "Property": "Description"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "areaChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RateDD"
+                        }
+                      },
+                      "Property": "DateDD"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RateDD"
+                        }
+                      },
+                      "Property": "DateDD"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "6e9020352a060bc95068": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "205a72c4d1452b17ef84": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "37d1add03a2944b57d30",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "r",
+                        "Entity": "RateDD",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Aggregation": {
+                                    "Expression": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "r"
+                                          }
+                                        },
+                                        "Property": "Rate"
+                                      }
+                                    },
+                                    "Function": 1
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "RateDD"
+                            }
+                          },
+                          "Property": "Rate"
+                        }
+                      },
+                      "Function": 1
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter9e04991bf458ffb42cae",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "r",
+                        "Entity": "RateDD",
+                        "Type": 0
+                      },
+                      {
+                        "Name": "_",
+                        "Entity": "_Measures",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "Freq_Filter"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Freq_Filter"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "29d78776c3639b15dd4e",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_Measures",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Measure": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "_"
+                                      }
+                                    },
+                                    "Property": "Growth_R"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "-1L"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Growth_R"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "583a6f5c80ade9739a13",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RateDD"
+                        }
+                      },
+                      "Property": "DateDD"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ab590fa2b04701544e89",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CL_Cur"
+                        }
+                      },
+                      "Property": "Description"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RateDD"
+                        }
+                      },
+                      "Property": "DateDD"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RateDD"
+                        }
+                      },
+                      "Property": "DateDD"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "6fce459f0a00d6a40d46": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "2c1ec5c575a2213856f3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "7510dd539a06ba8c01a1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Frequency"
+                        }
+                      },
+                      "Property": "Period"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "f",
+                                "Entity": "Frequency",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "f"
+                                            }
+                                          },
+                                          "Property": "Period"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'1Y'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Basic'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Frequency"
+                        }
+                      },
+                      "Property": "Period"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Frequency"
+                        }
+                      },
+                      "Property": "Period"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b7e401d54d08038a6cba": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "9b3825e071d20192770d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CL_Cur"
+                        }
+                      },
+                      "Property": "Ccde_Desc"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "c",
+                                "Entity": "CL_Cur",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "c"
+                                            }
+                                          },
+                                          "Property": "Ccde_Desc"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'USD აშშ დოლარი'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'EUR ევრო'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'TRY თურქული ლირა'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'GBP დიდი ბრიტანეთის გირვანქა სტერლინგი'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Basic'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CL_Cur"
+                        }
+                      },
+                      "Property": "Ccde_Desc"
+                    }
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Values"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "CL_Cur.Ccde_Desc"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ]
+            }
+          },
+          "b56392535a46592cb3cc": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "1fce5744ac3c19b3885c": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "5ed7ff902d8613006e34": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "61aefd8b69c0221d67a3": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "33ae1fb20b988ccc786d": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "a3545eac21e3b3c25e0b": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "abd68e056a7022b1bd00": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "935423c7ed2091522c5b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ae49a74a81c355a0a68d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CL_Cur"
+                        }
+                      },
+                      "Property": "Ccde_Desc"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "c",
+                                "Entity": "CL_Cur",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "c"
+                                            }
+                                          },
+                                          "Property": "Ccde_Desc"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'USD აშშ დოლარი'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CL_Cur"
+                        }
+                      },
+                      "Property": "Ccde_Desc"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a26ecd027cc4b7d68919": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filterd06c961ae20b4d261007",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "c",
+                        "Entity": "CL_Cur",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "c"
+                                    }
+                                  },
+                                  "Property": "Code"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'USD'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'EUR'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'GBP'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'TRY'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CL_Cur"
+                        }
+                      },
+                      "Property": "Code"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "d2dc9d82d4970e2a8ed6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Last_Date_Rate"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "207e423b2b2d101871eb",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "CL_Cur"
+                            }
+                          },
+                          "Property": "Code"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e5d8f261cd380074e6ec",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Country_Flags"
+                        }
+                      },
+                      "Property": "Country_Flag_Link"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "11c5197e4084cb41a570",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Rate_Diff"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Country_Flags"
+                        }
+                      },
+                      "Property": "Country_Flag_Link"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "0018c0d6936859b65aa4": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "4f0dc30643ab43c8a1da": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "2f56ebe437d3316ac098": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "b2ea3fec0058c5a19538": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "ff179d036a07ee975d55": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "69299fa68e15916b3926": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "7d8a12f522d0d0534943": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "907d74d33f3da7bd39c7": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "264e66f474639deb9c0d": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "283d1c58c8335b6781e7": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "2d97f09ed4ea3f0366f1": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "f1eae71c0e90271ce78a": {
+            "isHidden": false
+          },
+          "b5fa5e54b9e03a7b6161": {
+            "isHidden": true
+          },
+          "5a09dcef489aaa196331": {
+            "isHidden": true
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

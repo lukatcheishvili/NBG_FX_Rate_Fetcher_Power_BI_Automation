@@ -1,0 +1,55 @@
+expression fnNbgParseSheet =
+		// Parses an NBG rates sheet: the row holding the ISO codes is found by looking for "USD";
+		// the two rows above it hold the units (K) and the Georgian names; dates start on the next row.
+		// Returns [Rates = Date/Currency/Rate long table, Currencies = Currency/Division/Currency_Long].
+		(sheet as table) as record =>
+		let
+		    ColNames = Table.ColumnNames(sheet),
+		    Indexed = Table.AddIndexColumn(sheet, "__idx", 0, 1),
+		    CodeRowIdx = Table.SelectRows(Indexed, each List.Contains(Record.FieldValues(Record.RemoveFields(_, "__idx")), "USD")){0}[__idx],
+		    Codes = Record.FieldValues(sheet{CodeRowIdx}),
+		    Units = Record.FieldValues(sheet{CodeRowIdx - 1}),
+		    Names = Record.FieldValues(sheet{CodeRowIdx - 2}),
+		    Positions = List.Select(List.Numbers(1, List.Count(ColNames) - 1), each Codes{_} <> null and Text.Trim(Text.From(Codes{_})) <> ""),
+		    Currencies = Table.FromRecords(
+		        List.Transform(Positions, each [Currency = Text.Trim(Text.From(Codes{_})), Division = Int64.From(Units{_}), Currency_Long = Text.Trim(Text.From(Names{_}))]),
+		        type table [Currency = text, Division = Int64.Type, Currency_Long = text]),
+		    Data = Table.Skip(sheet, CodeRowIdx + 1),
+		    Selected = Table.SelectColumns(Data, {ColNames{0}} & List.Transform(Positions, each ColNames{_})),
+		    Renamed = Table.RenameColumns(Selected, {{ColNames{0}, "Date"}} & List.Transform(Positions, each {ColNames{_}, Text.Trim(Text.From(Codes{_}))})),
+		    DatesOnly = Table.SelectRows(Renamed, each [Date] is datetime or [Date] is date),
+		    TypedDate = Table.TransformColumnTypes(DatesOnly, {{"Date", type date}}),
+		    Unpivoted = Table.UnpivotOtherColumns(TypedDate, {"Date"}, "Currency", "Rate"),
+		    NumbersOnly = Table.SelectRows(Unpivoted, each [Rate] is number),
+		    Rates = Table.TransformColumnTypes(NumbersOnly, {{"Rate", type number}, {"Currency", type text}})
+		in
+		    [Rates = Rates, Currencies = Currencies]
+	lineageTag: 6fb595f4-72f4-4e36-b639-7968cc1d1182
+
+	annotation PBI_ResultType = Function
+
+expression NBG_Live_Sheet =
+		let
+		    Source = Excel.Workbook(Web.Contents("https://nbg.gov.ge/fm/%E1%83%A1%E1%83%A2%E1%83%90%E1%83%A2%E1%83%98%E1%83%A1%E1%83%A2%E1%83%98%E1%83%99%E1%83%90/exchange_rates/geo/official-daily-exchange-ratesgeo.xlsx?v=j201d"), null, true),
+		    G = Source{[Item="G",Kind="Sheet"]}[Data]
+		in
+		    G
+	lineageTag: 314e9a94-52f9-407f-bae5-0cc82cc33cab
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression NBG_History_Sheet =
+		let
+		    Source = Excel.Workbook(Web.Contents("https://nbg.gov.ge/fm/%E1%83%A1%E1%83%A2%E1%83%90%E1%83%A2%E1%83%98%E1%83%A1%E1%83%A2%E1%83%98%E1%83%99%E1%83%90/exchange_rates/geo/exratesyearsgeo.xlsx?v=hraev"), null, true),
+		    // The all-years sheet is named "2001-<last full year>", so match on the prefix
+		    AllYears = Table.SelectRows(Source, each [Kind] = "Sheet" and Text.StartsWith([Item], "2001-")){0}[Data]
+		in
+		    AllYears
+	lineageTag: 7e50c4f0-5ec4-43e1-aa51-ad2df6fbbb4a
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

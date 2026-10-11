@@ -1,0 +1,156 @@
+table Mapping
+	lineageTag: 2e901373-35e3-4fd9-8b8d-d05d11f27f50
+
+	column Currency
+		dataType: string
+		lineageTag: 5e9af83f-fe5a-4ffe-ab8e-889e3d4193cc
+		summarizeBy: none
+		sourceColumn: Currency
+		sortByColumn: Sort_Order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division
+		dataType: int64
+		formatString: 0
+		lineageTag: ee9b4dd7-8966-4086-a5e9-536c4403c469
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency_Long
+		dataType: string
+		lineageTag: 26b8a492-61ae-4a84-b8ca-72d9fc606dc4
+		summarizeBy: none
+		sourceColumn: Currency_Long
+		sortByColumn: Name_Sort_Order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency_Desc = Mapping[Currency] & " " & Mapping[Currency_Long]
+		dataType: string
+		lineageTag: a5f9a2ce-830f-4ae2-9092-9727824dad49
+		summarizeBy: none
+		sortByColumn: Sort_Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort_Order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ccd0d9c7-f975-4e29-ac7e-2e9ebc80e42d
+		summarizeBy: none
+		sourceColumn: Sort_Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name_Sort_Order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: aeabc16f-d038-4296-82dc-fdcb2b2d3412
+		summarizeBy: none
+		sourceColumn: Name_Sort_Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flag_URL =
+			VAR _iso2 = SWITCH ( Mapping[Currency],
+			    "USD", "us",
+			    "EUR", "eu",
+			    "GBP", "gb",
+			    "AED", "ae",
+			    "AMD", "am",
+			    "AUD", "au",
+			    "AZN", "az",
+			    "BGN", "bg",
+			    "BYN", "by",
+			    "CAD", "ca",
+			    "CHF", "ch",
+			    "CNY", "cn",
+			    "CZK", "cz",
+			    "DKK", "dk",
+			    "EGP", "eg",
+			    "HKD", "hk",
+			    "HUF", "hu",
+			    "ILS", "il",
+			    "INR", "in",
+			    "IRR", "ir",
+			    "ISK", "is",
+			    "JPY", "jp",
+			    "KGS", "kg",
+			    "KRW", "kr",
+			    "KWD", "kw",
+			    "KZT", "kz",
+			    "MDL", "md",
+			    "NOK", "no",
+			    "NZD", "nz",
+			    "PLN", "pl",
+			    "QAR", "qa",
+			    "RON", "ro",
+			    "RSD", "rs",
+			    "RUB", "ru",
+			    "SEK", "se",
+			    "SGD", "sg",
+			    "TJS", "tj",
+			    "TMT", "tm",
+			    "TRY", "tr",
+			    "UAH", "ua",
+			    "UZS", "uz",
+			    "ZAR", "za",
+			    "BRL", "br",
+			    BLANK () )
+			RETURN IF ( NOT ISBLANK ( _iso2 ), "https://flagcdn.com/w40/" & _iso2 & ".png" )
+		dataType: string
+		lineageTag: 77a473e0-c8ab-4bc1-942d-e61daeb7eb32
+		dataCategory: ImageUrl
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Listed =
+			// 1 for currencies quoted in the last 2 years (what NBG's slicers list); 0 for retired ones (DEM, ROL, BYR, ...)
+			VAR _code = Mapping[Currency]
+			VAR _lastForCode = MAXX ( FILTER ( ALL ( NBG_Rates[Currency], NBG_Rates[Date] ), NBG_Rates[Currency] = _code ), NBG_Rates[Date] )
+			VAR _lastOverall = MAX ( NBG_Rates[Date] )
+			RETURN IF ( NOT ISBLANK ( _lastForCode ) && _lastForCode >= EDATE ( _lastOverall, -24 ), 1, 0 )
+		dataType: int64
+		formatString: 0
+		lineageTag: df1e657a-bfa4-43e3-94ad-9b9c02086781
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Mapping = m
+		mode: import
+		source =
+				let
+				    // Codes, units (K) and Georgian names come from the header rows of both NBG files;
+				    // the live file is listed first so its names and units win for current currencies
+				    Live = fnNbgParseSheet(NBG_Live_Sheet)[Currencies],
+				    History = fnNbgParseSheet(NBG_History_Sheet)[Currencies],
+				    Combined = Table.Buffer(Table.Combine({Live, History})),
+				    Distinct = Table.Distinct(Combined, {"Currency"}),
+				    Sorted = Table.Sort(Distinct, {{"Currency", Order.Ascending}}),
+				    // Sort columns are built here, not in DAX: sorting a column by a DAX column derived from it is a circular dependency.
+				    // USD, EUR, GBP first, then the rest by code
+				    Ranked = Table.AddIndexColumn(Sorted, "Rank", 1, 1, Int64.Type),
+				    WithSortOrder = Table.Buffer(Table.AddColumn(Ranked, "Sort_Order",
+				        each (if [Currency] = "USD" then 1 else if [Currency] = "EUR" then 2 else if [Currency] = "GBP" then 3 else 4) * 1000 + [Rank], Int64.Type)),
+				    // Old and new codes can share a name (TRL/TRY, ROL/RON, ...), so a name takes the lowest Sort_Order among its codes
+				    WithNameSortOrder = Table.AddColumn(WithSortOrder, "Name_Sort_Order",
+				        (row) => List.Min(Table.SelectRows(WithSortOrder, each [Currency_Long] = row[Currency_Long])[Sort_Order]), Int64.Type),
+				    Result = Table.RemoveColumns(WithNameSortOrder, {"Rank"})
+				in
+				    Result
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

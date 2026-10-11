@@ -1,0 +1,24 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["fnNbgParseSheet","NBG_Live_Sheet","NBG_History_Sheet","NBG_Rates_Web_Source","Mapping","NBG_Rates_Historical_Rates","NBG_Rates"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
+
+ref table NBG_Rates_Web_Source
+ref table Metrics
+ref table Advanced_Calendar
+ref table Mapping
+ref table NBG_Rates_Historical_Rates
+ref table NBG_Rates
+ref table Frequency
+
+ref cultureInfo en-US
+

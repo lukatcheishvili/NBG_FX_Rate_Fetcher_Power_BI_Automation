@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "dc6da5b3a8d9b06ab06e",
+  "position": {
+    "x": 47.9144385026738,
+    "y": 460.89126559714794,
+    "z": 16000,
+    "height": 168.8413547237077,
+    "width": 225.8823529411765,
+    "tabOrder": 14000
+  },
+  "visualGroup": {
+    "displayName": "Group_Contact",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

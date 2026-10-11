@@ -1,0 +1,139 @@
+{
+  "name": "NBG Ferrari",
+  "dataColors": [
+    "#3987E5",
+    "#D95926",
+    "#199E70",
+    "#C98500",
+    "#D55181",
+    "#008300",
+    "#9085E9",
+    "#E66767"
+  ],
+  "background": "#222222",
+  "foreground": "#FFFFFF",
+  "tableAccent": "#DA291C",
+  "good": "#22B066",
+  "bad": "#FF5A4F",
+  "neutral": "#969696",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI",
+      "color": "#FFFFFF",
+      "fontSize": 21
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "color": "#FFFFFF",
+      "fontSize": 11
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "color": "#FFFFFF",
+      "fontSize": 10
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "color": "#969696",
+      "fontSize": 8
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#222222"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#222222"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": false
+          }
+        ],
+        "title": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "fontFamily": "Segoe UI Semibold",
+            "fontSize": 11
+          }
+        ],
+        "subTitle": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#969696"
+              }
+            },
+            "fontFamily": "Segoe UI",
+            "fontSize": 8
+          }
+        ],
+        "visualHeader": [
+          {
+            "background": {
+              "solid": {
+                "color": "#222222"
+              }
+            },
+            "foreground": {
+              "solid": {
+                "color": "#969696"
+              }
+            },
+            "border": {
+              "solid": {
+                "color": "#222222"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#181818"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#181818"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}

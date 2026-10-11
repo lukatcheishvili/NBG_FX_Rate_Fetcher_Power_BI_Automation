@@ -1,0 +1,203 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "a759698f27fc098fcda1",
+  "displayName": "ყოველდღიური ცხრილი · ღია",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "d10bb7eda8e9e94b3544",
+    "type": "Default",
+    "parameters": []
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#EFEEEA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspace": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#EFEEEA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "displayArea": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Middle'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "f6d6235a451c276d4242",
+      "target": "5f8082e628dd5adcadb2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "db0b92c750f308bcbb70",
+      "target": "a7342c733bc3de30356e",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5f8082e628dd5adcadb2",
+      "target": "a7342c733bc3de30356e",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f6d6235a451c276d4242",
+      "target": "a7342c733bc3de30356e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a7342c733bc3de30356e",
+      "target": "f6d6235a451c276d4242",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a7342c733bc3de30356e",
+      "target": "5f8082e628dd5adcadb2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5f8082e628dd5adcadb2",
+      "target": "73eb1b0ac19cf0e5011f",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5f8082e628dd5adcadb2",
+      "target": "f6d6235a451c276d4242",
+      "type": "DataFilter"
+    },
+    {
+      "source": "73eb1b0ac19cf0e5011f",
+      "target": "a7342c733bc3de30356e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "73eb1b0ac19cf0e5011f",
+      "target": "5f8082e628dd5adcadb2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "73eb1b0ac19cf0e5011f",
+      "target": "f6d6235a451c276d4242",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f6d6235a451c276d4242",
+      "target": "2804471418f3775d3c4b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5f8082e628dd5adcadb2",
+      "target": "2804471418f3775d3c4b",
+      "type": "NoFilter"
+    }
+  ],
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "083897df0bc2385526c5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Mapping"
+              }
+            },
+            "Property": "Is_Listed"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "Mapping",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "m"
+                          }
+                        },
+                        "Property": "Is_Listed"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "1L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      }
+    ]
+  }
+}

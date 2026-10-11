@@ -1,0 +1,4811 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "3.5.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "NBG_rates_web_source": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "NBG_Rates_Web_Source"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "NBG rates web source": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NBG rate web source": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "NBG_Rates_Web_Source": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "source": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "web source": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "rates web source": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "rate web source": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.7566
+			          }
+			        },
+			        {
+			          "nbg rate web basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "nbg rate web font": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "nbg rate web birthplace": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "rate web basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "rate web font": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "rate web birthplace": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "web basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "web font": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "web birthplace": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "nbg rate web foundation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        }
+			      ]
+			    },
+			    "NBG_rates_web_source.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "NBG_Rates_Web_Source",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "NBG_rates_web_source.currency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "NBG_Rates_Web_Source",
+			          "ConceptualProperty": "Currency"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "currency": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "money": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "coinage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "exchange": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cash": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "prevalence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "popularity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "vogue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "circulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "commonness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "NBG_rates_web_source.rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "NBG_Rates_Web_Source",
+			          "ConceptualProperty": "Rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "rate": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "proportion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "speed": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "level": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "scale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "tempo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "velocity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "metrics": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "metrics": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.column": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Column"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "column": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "pilaster": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "pier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "pillar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "post": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "support": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "stake": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "pole": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "buttress": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "underpinning": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "contribution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.filtered_rate_values": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Filtered_Rate_Values"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "filtered rate values": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Filtered_Rate_Values": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "values": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "rate values": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "filtered rate ethic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "filtered rate principle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "filtered rate tenet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "filtered rate belief": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "rate ethic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "rate principle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "rate tenet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "rate belief": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "filtered rate standard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "filtered rate moral": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.selected_currency_info": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Selected_Currency_Info_Title"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "selected currency info": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Selected_Currency_Info": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "info": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "currency info": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "selected currency information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "selected currency data": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "currency information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "currency data": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "selected currency gen": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "data": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "currency gen": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "selected currency news": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "selected currency intelligence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "advanced calendar": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Advanced_Calendar": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "calendar": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "advanced almanac": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "advanced datebook": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "advanced agenda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "advanced logbook": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "advanced diary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "almanac": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "datebook": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "agenda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "logbook": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "diary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "advanced_calendar.date.variation.date_hierarchy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "advanced_calendar.date.variation.date_hierarchy.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "moment year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "advanced_calendar.date.variation.date_hierarchy.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.833
+			          }
+			        },
+			        {
+			          "qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        },
+			        {
+			          "moment quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "advanced_calendar.date.variation.date_hierarchy.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "moment month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "advanced_calendar.date.variation.date_hierarchy.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "advanced_calendar.date_as_integer": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "DateAsInteger"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date as integer": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DateAsInteger": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "integer": {
+			            "Type": "Noun",
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "as integer": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "moment as integer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "period as integer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "as digit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "digit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "as number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "as numeral": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "as figure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "numeral": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "figure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "advanced_calendar.month_number": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "MonthNumber"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month number": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MonthNumber": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "month no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "mth number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.year_month_number": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "YearMonthNumber"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year month number": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "YearMonthNumber": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "year month no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "yr month number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "year mth number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.year_month_short": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "YearMonthShort"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year month short": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "YearMonthShort": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "short": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "month short": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "yr month short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "year mth short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "mth short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "small": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "little": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "petite": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "squat": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "diminutive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "brief": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "quick": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.month_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "MonthYear"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MonthYear": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "month yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "mth year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.month_name_short": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "MonthNameShort"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month name short": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MonthNameShort": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "short": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "name short": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "mth name short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "month nickname short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "month title short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "month label short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "month tag short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "nickname short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "title short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "label short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "tag short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "small": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.week_number": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "WeekNumber"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "week number": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "WeekNumber": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "week no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.day_of_week_number": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "DayOfWeekNumber"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day of week number": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DayOfWeekNumber": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "day of week no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.day_of_week_short": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "DayOfWeekShort"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day of week short": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DayOfWeekShort": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.day_of_week": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "DayOfWeek"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day of week": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DayOfWeek": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.year_quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "YearQuarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "YearQuarter": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "year qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.833
+			          }
+			        },
+			        {
+			          "yr quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.day_month_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "DayMonthYear"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day month year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DayMonthYear": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "day month yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "day mth year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.month_year1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "Month_Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Month_Year": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "month yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "mth year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.day_month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "DayMonth"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DayMonth": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "day mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "mapping": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mapping"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mapping": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "mapping.currency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mapping",
+			          "ConceptualProperty": "Currency"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "currency": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "money": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "coinage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "exchange": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cash": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "prevalence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "popularity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "vogue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "circulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "commonness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "mapping.division": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mapping",
+			          "ConceptualProperty": "Division"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "division": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "separation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "dissection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "detachment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "disunion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "partition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "disagreement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "schism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "disharmony": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "dissonance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "split": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "mapping.currency_long": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mapping",
+			          "ConceptualProperty": "Currency_Long"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "currency long": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Currency_Long": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "NBG_rates_historical_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "NBG_Rates_Historical_Rates"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "NBG rates historical rate": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NBG rate historical rate": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "NBG_Rates_Historical_Rates": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "nbg rate historical degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "nbg rate historical frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "nbg rate historical percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "nbg rate historical ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "nbg rate historical quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "nbg rate historical amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "nbg rate historical proportion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "nbg rate historical speed": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "nbg rate historical level": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "nbg rate historical scale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        }
+			      ]
+			    },
+			    "NBG_rates_historical_rate.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "NBG_Rates_Historical_Rates",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "NBG_rates_historical_rate.currency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "NBG_Rates_Historical_Rates",
+			          "ConceptualProperty": "Currency"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "currency": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "money": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "coinage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "exchange": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cash": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "prevalence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "popularity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "vogue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "circulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "commonness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "NBG_rates_historical_rate.rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "NBG_Rates_Historical_Rates",
+			          "ConceptualProperty": "Rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "rate": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "proportion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "speed": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "level": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "scale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "tempo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "velocity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "NBG_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "NBG_Rates"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NBG rate": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NBG_Rates": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "nbg degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "nbg frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "nbg percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "nbg ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "nbg quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "nbg amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "nbg proportion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "nbg speed": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "nbg level": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "nbg scale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "NBG_rate.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "NBG_Rates",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "NBG_rate.currency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "NBG_Rates",
+			          "ConceptualProperty": "Currency"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "currency": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "money": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "coinage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "exchange": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cash": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "prevalence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "popularity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "vogue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "circulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "commonness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "NBG_rate.rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "NBG_Rates",
+			          "ConceptualProperty": "Rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "rate": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "proportion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "speed": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "level": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "scale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "tempo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "velocity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "NBG_rate.normalized_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "NBG_Rates",
+			          "ConceptualProperty": "Normalized_Rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "normalized rate": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Normalized_Rate": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "normalized degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "normalized frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "normalized percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "normalized ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "normalized quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "normalized amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "normalized proportion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "normalized speed": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "normalized level": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "normalized scale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.v__Rate_Change_Rate_Change": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "%_Rate_Change"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "%_Rate_Change": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage _rate_change": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "pct _rate_change": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "advanced_calendar.year_mm": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Advanced_Calendar",
+			          "ConceptualProperty": "Year_MM"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "mapping.flag_url": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mapping",
+			          "ConceptualProperty": "Flag_URL"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "metrics.growth_r": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Growth_R"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "metrics.last_date_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Last_Date_Rate"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "metrics.rate_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Rate_Diff"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "metrics.base_date_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "Base_Date_Rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "საბაზისო გაცვლითი კურსი": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metrics.end_of_month_exrate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Metrics",
+			          "ConceptualProperty": "End_of_Month_ExRate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "თვის ბოლოს": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "NBG_rate_has_mapping1": {
+			      "Binding": {
+			        "ConceptualEntity": "NBG_Rates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "NBG_rate": {
+			          "Target": {
+			            "Entity": "NBG_rate"
+			          }
+			        },
+			        "mapping": {
+			          "Target": {
+			            "Entity": "mapping"
+			          },
+			          "Nouns": [
+			            {
+			              "currency": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "NBG_rate"
+			            },
+			            "Object": {
+			              "Role": "mapping"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "NBG_rates_have_mapping"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mapping"
+			            },
+			            "Object": {
+			              "Role": "NBG_rate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mapping_have_NBG_rates"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_as_date_as_integer": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.date_as_integer": {
+			          "Target": {
+			            "Entity": "advanced_calendar.date_as_integer"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Prepositions": [
+			              {
+			                "as": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "advanced_calendar.date_as_integer"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_are_as_date_as_integer"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.date_as_integer"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_date_as_integer"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Verbs": [
+			              {
+			                "date": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "PrepositionalPhrases": [
+			              {
+			                "Prepositions": [
+			                  {
+			                    "as": {
+			                      "State": "Generated"
+			                    }
+			                  }
+			                ],
+			                "Object": {
+			                  "Role": "advanced_calendar.date_as_integer"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "advanced_calendars_date_as_date_as_integer"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_date_variation_date_hierarchy_has_day": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar.date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "advanced_calendar.date.variation.date_hierarchy"
+			          }
+			        },
+			        "advanced_calendar.date.variation.date_hierarchy.day": {
+			          "Target": {
+			            "Entity": "advanced_calendar.date.variation.date_hierarchy.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar.date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.date.variation.date_hierarchy.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_days"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_date_variation_date_hierarchy_has_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar.date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "advanced_calendar.date.variation.date_hierarchy"
+			          }
+			        },
+			        "advanced_calendar.date.variation.date_hierarchy.month": {
+			          "Target": {
+			            "Entity": "advanced_calendar.date.variation.date_hierarchy.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar.date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.date.variation.date_hierarchy.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_months"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_date_variation_date_hierarchy_has_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar.date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "advanced_calendar.date.variation.date_hierarchy"
+			          }
+			        },
+			        "advanced_calendar.date.variation.date_hierarchy.quarter": {
+			          "Target": {
+			            "Entity": "advanced_calendar.date.variation.date_hierarchy.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar.date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.date.variation.date_hierarchy.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_quarters"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_date_variation_date_hierarchy_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar.date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "advanced_calendar.date.variation.date_hierarchy"
+			          }
+			        },
+			        "advanced_calendar.date.variation.date_hierarchy.year": {
+			          "Target": {
+			            "Entity": "advanced_calendar.date.variation.date_hierarchy.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar.date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.date.variation.date_hierarchy.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_years"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_date_has_variation_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar.date": {
+			          "Target": {
+			            "Entity": "advanced_calendar.date"
+			          }
+			        },
+			        "advanced_calendar.date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "advanced_calendar.date.variation.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar.date"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.date.variation.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dates_have_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "NBG_rate_has_advanced_calendar": {
+			      "Binding": {
+			        "ConceptualEntity": "NBG_Rates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "NBG_rate": {
+			          "Target": {
+			            "Entity": "NBG_rate"
+			          }
+			        },
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "NBG_rate"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "NBG_rates_have_advanced_calendars"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "NBG_rate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_NBG_rates"
+			        }
+			      ]
+			    },
+			    "NBG_rates_historical_rate_has_mapping": {
+			      "Binding": {
+			        "ConceptualEntity": "NBG_Rates_Historical_Rates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "NBG_rates_historical_rate": {
+			          "Target": {
+			            "Entity": "NBG_rates_historical_rate"
+			          }
+			        },
+			        "mapping": {
+			          "Target": {
+			            "Entity": "mapping"
+			          }
+			        }
+			      }
+			    },
+			    "NBG_rates_historical_rate_has_advanced_calendar": {
+			      "Binding": {
+			        "ConceptualEntity": "NBG_Rates_Historical_Rates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "NBG_rates_historical_rate": {
+			          "Target": {
+			            "Entity": "NBG_rates_historical_rate"
+			          }
+			        },
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        }
+			      }
+			    },
+			    "NBG_rates_web_source_has_mapping": {
+			      "Binding": {
+			        "ConceptualEntity": "NBG_Rates_Web_Source"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "NBG_rates_web_source": {
+			          "Target": {
+			            "Entity": "NBG_rates_web_source"
+			          }
+			        },
+			        "mapping": {
+			          "Target": {
+			            "Entity": "mapping"
+			          }
+			        }
+			      }
+			    },
+			    "NBG_rates_web_source_has_advanced_calendar": {
+			      "Binding": {
+			        "ConceptualEntity": "NBG_Rates_Web_Source"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "NBG_rates_web_source": {
+			          "Target": {
+			            "Entity": "NBG_rates_web_source"
+			          }
+			        },
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        }
+			      }
+			    },
+			    "NBG_rate_has_metrics_v__Rate_Change_Rate_Change": {
+			      "Binding": {
+			        "ConceptualEntity": "NBG_Rates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "NBG_rate": {
+			          "Target": {
+			            "Entity": "NBG_rate"
+			          }
+			        },
+			        "metrics.v__Rate_Change_Rate_Change": {
+			          "Target": {
+			            "Entity": "metrics.v__Rate_Change_Rate_Change"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "NBG_rate"
+			            },
+			            "Object": {
+			              "Role": "metrics.v__Rate_Change_Rate_Change"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "NBG_rates_have__Rate_Change"
+			        }
+			      ]
+			    },
+			    "NBG_rate_has_normalized_rate": {
+			      "Binding": {
+			        "ConceptualEntity": "NBG_Rates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "NBG_rate": {
+			          "Target": {
+			            "Entity": "NBG_rate"
+			          }
+			        },
+			        "NBG_rate.normalized_rate": {
+			          "Target": {
+			            "Entity": "NBG_rate.normalized_rate"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "NBG_rate"
+			            },
+			            "Object": {
+			              "Role": "NBG_rate.normalized_rate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "NBG_rates_have_normalized_rates"
+			        }
+			      ]
+			    },
+			    "NBG_rate_has_rate": {
+			      "Binding": {
+			        "ConceptualEntity": "NBG_Rates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "NBG_rate": {
+			          "Target": {
+			            "Entity": "NBG_rate"
+			          }
+			        },
+			        "NBG_rate.rate": {
+			          "Target": {
+			            "Entity": "NBG_rate.rate"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "NBG_rate"
+			            },
+			            "Object": {
+			              "Role": "NBG_rate.rate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "NBG_rates_have_rates"
+			        }
+			      ]
+			    },
+			    "NBG_rate_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "NBG_Rates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "NBG_rate": {
+			          "Target": {
+			            "Entity": "NBG_rate"
+			          }
+			        },
+			        "NBG_rate.date": {
+			          "Target": {
+			            "Entity": "NBG_rate.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "NBG_rate"
+			            },
+			            "Object": {
+			              "Role": "NBG_rate.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "NBG_rates_have_dates"
+			        }
+			      ]
+			    },
+			    "mapping_has_currency_long": {
+			      "Binding": {
+			        "ConceptualEntity": "Mapping"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mapping": {
+			          "Target": {
+			            "Entity": "mapping"
+			          }
+			        },
+			        "mapping.currency_long": {
+			          "Target": {
+			            "Entity": "mapping.currency_long"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mapping"
+			            },
+			            "Object": {
+			              "Role": "mapping.currency_long"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mapping_have_currency_longs"
+			        }
+			      ]
+			    },
+			    "mapping_has_division": {
+			      "Binding": {
+			        "ConceptualEntity": "Mapping"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mapping": {
+			          "Target": {
+			            "Entity": "mapping"
+			          }
+			        },
+			        "mapping.division": {
+			          "Target": {
+			            "Entity": "mapping.division"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mapping"
+			            },
+			            "Object": {
+			              "Role": "mapping.division"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mapping_have_divisions"
+			        }
+			      ]
+			    },
+			    "mapping_has_currency": {
+			      "Binding": {
+			        "ConceptualEntity": "Mapping"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mapping": {
+			          "Target": {
+			            "Entity": "mapping"
+			          }
+			        },
+			        "mapping.currency": {
+			          "Target": {
+			            "Entity": "mapping.currency"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mapping"
+			            },
+			            "Object": {
+			              "Role": "mapping.currency"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mapping_have_currencies"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_day_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.day_month": {
+			          "Target": {
+			            "Entity": "advanced_calendar.day_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.day_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_day_months"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_month_year1": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.month_year1": {
+			          "Target": {
+			            "Entity": "advanced_calendar.month_year1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.month_year1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_month_years"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_day_month_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.day_month_year": {
+			          "Target": {
+			            "Entity": "advanced_calendar.day_month_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.day_month_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_day_month_years"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_day": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.day": {
+			          "Target": {
+			            "Entity": "advanced_calendar.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_days"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_year_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.year_quarter": {
+			          "Target": {
+			            "Entity": "advanced_calendar.year_quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.year_quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_year_quarters"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.quarter": {
+			          "Target": {
+			            "Entity": "advanced_calendar.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_quarters"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_day_of_week": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.day_of_week": {
+			          "Target": {
+			            "Entity": "advanced_calendar.day_of_week"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.day_of_week"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_day_of_week"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_day_of_week_short": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.day_of_week_short": {
+			          "Target": {
+			            "Entity": "advanced_calendar.day_of_week_short"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.day_of_week_short"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_day_of_week_short"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_day_of_week_number": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.day_of_week_number": {
+			          "Target": {
+			            "Entity": "advanced_calendar.day_of_week_number"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.day_of_week_number"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_day_of_week_number"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_week_number": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.week_number": {
+			          "Target": {
+			            "Entity": "advanced_calendar.week_number"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.week_number"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_week_numbers"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.month": {
+			          "Target": {
+			            "Entity": "advanced_calendar.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_months"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_month_name_short": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.month_name_short": {
+			          "Target": {
+			            "Entity": "advanced_calendar.month_name_short"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.month_name_short"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_month_name_shorts"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_month_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.month_year": {
+			          "Target": {
+			            "Entity": "advanced_calendar.month_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.month_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_month_years1"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_year_month_short": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.year_month_short": {
+			          "Target": {
+			            "Entity": "advanced_calendar.year_month_short"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.year_month_short"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_year_month_shorts"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_year_month_number": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.year_month_number": {
+			          "Target": {
+			            "Entity": "advanced_calendar.year_month_number"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.year_month_number"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_year_month_numbers"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_month_number": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.month_number": {
+			          "Target": {
+			            "Entity": "advanced_calendar.month_number"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.month_number"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_month_numbers"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.year": {
+			          "Target": {
+			            "Entity": "advanced_calendar.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_years"
+			        }
+			      ]
+			    },
+			    "advanced_calendar_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Advanced_Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "advanced_calendar": {
+			          "Target": {
+			            "Entity": "advanced_calendar"
+			          }
+			        },
+			        "advanced_calendar.date": {
+			          "Target": {
+			            "Entity": "advanced_calendar.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "advanced_calendar"
+			            },
+			            "Object": {
+			              "Role": "advanced_calendar.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "advanced_calendars_have_dates"
+			        }
+			      ]
+			    },
+			    "metrics_has_selected_currency_info": {
+			      "Binding": {
+			        "ConceptualEntity": "Metrics"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "metrics": {
+			          "Target": {
+			            "Entity": "metrics"
+			          }
+			        },
+			        "metrics.selected_currency_info": {
+			          "Target": {
+			            "Entity": "metrics.selected_currency_info"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "metrics"
+			            },
+			            "Object": {
+			              "Role": "metrics.selected_currency_info"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "metrics_have_selected_currency_info"
+			        }
+			      ]
+			    },
+			    "NBG_rate_has_metrics_filtered_rate_values": {
+			      "Binding": {
+			        "ConceptualEntity": "NBG_Rates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "NBG_rate": {
+			          "Target": {
+			            "Entity": "NBG_rate"
+			          }
+			        },
+			        "metrics.filtered_rate_values": {
+			          "Target": {
+			            "Entity": "metrics.filtered_rate_values"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "NBG_rate"
+			            },
+			            "Object": {
+			              "Role": "metrics.filtered_rate_values"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "NBG_rates_have_filtered_rate_values"
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

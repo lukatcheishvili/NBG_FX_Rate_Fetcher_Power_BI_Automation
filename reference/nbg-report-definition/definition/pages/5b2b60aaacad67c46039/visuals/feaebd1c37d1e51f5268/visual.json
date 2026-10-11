@@ -1,0 +1,215 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "feaebd1c37d1e51f5268",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 224.99999999999997,
+    "width": 295,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "ცხრილი - ოფიციალური საშუალოთვიური გაცვლითი კურსები",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Georgia",
+                      "fontSize": "9pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "პერიოდულობა: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Georgia",
+                      "fontSize": "8pt",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": "ყოველდღიური",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "8pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "საერთო ფილტრები:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Georgia",
+                      "fontSize": "8pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "პერიოდის შუალედი",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "8pt",
+                      "color": "#000000"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "ვალუტა",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "8pt",
+                      "color": "#000000"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "მონაცემები ხელმისაწვდომია 2001 წლის იანვრიდან",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontStyle": "italic",
+                      "fontSize": "8pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Text box_Info'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "3d175ceff26a2ea8f471"
+}

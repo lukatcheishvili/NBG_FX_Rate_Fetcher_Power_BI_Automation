@@ -1,0 +1,27 @@
+# Power BI local files (machine-specific settings and the local data cache)
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Secrets and credentials (none are needed: the report reads public NBG files anonymously)
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+secrets.*
+credentials.*
+*credentials*.json
+*.publishsettings
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

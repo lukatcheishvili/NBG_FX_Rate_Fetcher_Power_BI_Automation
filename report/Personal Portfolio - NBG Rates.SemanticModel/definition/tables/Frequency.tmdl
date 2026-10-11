@@ -1,0 +1,33 @@
+table Frequency
+	lineageTag: e8ed6d11-a1fa-4b44-9993-f1697fc8c18f
+
+	column Period
+		dataType: string
+		lineageTag: b69a7556-173b-468c-a39b-83f7d7c396a0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Period]
+		sortByColumn: Period_Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period_Order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8e0014e2-ec78-4d1b-bcd9-2bc253795f18
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Period_Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Frequency = calculated
+		mode: import
+		source =
+				DATATABLE (
+				    "Period", STRING,
+				    "Period_Order", INTEGER,
+				    { { "1M", 1 }, { "3M", 2 }, { "6M", 3 }, { "1Y", 4 }, { "5Y", 5 }, { "ALL", 6 }, { "YTD", 7 } }
+				)
+

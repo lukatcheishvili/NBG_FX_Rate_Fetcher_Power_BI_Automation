@@ -1,0 +1,57 @@
+table NBG_Rates_Historical_Rates
+	isHidden
+	lineageTag: 930bc625-f341-45a1-89d0-1e63617108d6
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 3f6d89ae-14ea-4ad2-9597-146bb2b0a5ba
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Currency
+		dataType: string
+		isHidden
+		lineageTag: 44bbc91c-2c85-47ce-8ba4-40e5d76c852f
+		summarizeBy: none
+		sourceColumn: Currency
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rate
+		dataType: double
+		isHidden
+		lineageTag: 66607f57-4baf-4843-bdec-5774d0b83734
+		summarizeBy: sum
+		sourceColumn: Rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition NBG_Rates_Historical_Rates = m
+		mode: import
+		source =
+				let
+				    Rates = fnNbgParseSheet(NBG_History_Sheet)[Rates],
+				    Sorted = Table.Sort(Rates, {{"Date", Order.Descending}, {"Currency", Order.Ascending}})
+				in
+				    Sorted
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

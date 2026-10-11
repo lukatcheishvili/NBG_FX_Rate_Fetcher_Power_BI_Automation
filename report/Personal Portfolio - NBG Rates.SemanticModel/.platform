@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Personal Portfolio - NBG Rates"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3671b6ac-df61-47bf-94c5-d7b2448c2cd1"
+  }
+}

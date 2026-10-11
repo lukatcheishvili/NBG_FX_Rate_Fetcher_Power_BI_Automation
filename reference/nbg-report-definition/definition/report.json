@@ -1,0 +1,126 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU06",
+      "reportVersionAtImport": {
+        "visual": "1.8.92",
+        "report": "2.0.92",
+        "page": "1.3.92"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "visible": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Close_Gray2990440840994384.png",
+          "path": "Close_Gray2990440840994384.png",
+          "type": "Image"
+        },
+        {
+          "name": "close-11400419196944895428.png",
+          "path": "close-11400419196944895428.png",
+          "type": "Image"
+        },
+        {
+          "name": "cover_new-1029615843756293225.png",
+          "path": "cover_new-1029615843756293225.png",
+          "type": "Image"
+        },
+        {
+          "name": "Manu-Black24594904001229567.png",
+          "path": "Manu-Black24594904001229567.png",
+          "type": "Image"
+        },
+        {
+          "name": "Manu-Blue7204646506927659.png",
+          "path": "Manu-Blue7204646506927659.png",
+          "type": "Image"
+        },
+        {
+          "name": "Menu-White075399371331176699396776016334127.png",
+          "path": "Menu-White075399371331176699396776016334127.png",
+          "type": "Image"
+        },
+        {
+          "name": "NBG_mail_logo05726221472349091.png",
+          "path": "NBG_mail_logo05726221472349091.png",
+          "type": "Image"
+        },
+        {
+          "name": "pngtree-check-list-line-icon-p6737086498945883.png",
+          "path": "pngtree-check-list-line-icon-p6737086498945883.png",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY24SU06",
+          "path": "BaseThemes/CY24SU06.json",
+          "type": "BaseTheme"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "isPersistentUserStateDisabled": true,
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true,
+    "customMemoryLimit": "1048576",
+    "customTimeoutLimit": "225"
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

@@ -1,0 +1,182 @@
+// Visual data tests: each query reproduces what one report visual asks the model for,
+// with the report's default slicer state (period 1Y, currency USD, comparison USD/EUR/GBP/TRY,
+// listed currencies only). Run each EVALUATE in Power BI Desktop's DAX query view. "Expect" lines hold the values from NBG's own report on 12-10-2026; if NBG has
+// published newer rates since, dates move on but the checks marked (structure) must still hold.
+
+// T1 · KPI cards (overview) — one row per currency, nothing blank
+// Expect: USD 2.6005 "▼ −0.0014" · EUR 2.9154 "▲ +0.0054" · GBP 3.4415 "▲ +0.0073" ·
+//         RUB rate present · Caption "09-10-2026-თან შედარებით" (structure: 4 rows, no blanks)
+EVALUATE
+CALCULATETABLE (
+    ADDCOLUMNS (
+        FILTER ( VALUES ( Mapping[Currency] ), Mapping[Currency] IN { "USD", "EUR", "GBP", "RUB" } ),
+        "Rate", [Last_Date_Rate],
+        "Change", [Rate_Diff_Label],
+        "Caption", [Compare_Caption]
+    ),
+    Mapping[Is_Listed] = 1
+)
+
+// T2 · "Last update" field — equals the latest rate date
+// Expect: "12-10-2026" and LabelMatchesData = TRUE (structure)
+EVALUATE
+ROW (
+    "Last_Update", [Last_Update_Label],
+    "LatestRateDate", MAX ( NBG_Rates[Date] ),
+    "LabelMatchesData", [Last_Update_Label] = FORMAT ( MAX ( NBG_Rates[Date] ), "dd-MM-yyyy" )
+)
+
+// T3 · Area chart (selected currency vs base date) — USD, 1Y
+// Expect: ~366 points from 12-10-2025 to 12-10-2026, base line flat at 2.7117 (BaseMin = BaseMax),
+//         title "1 USD აშშ დოლარი : GEL"
+EVALUATE
+VAR _pts =
+    CALCULATETABLE (
+        FILTER (
+            ADDCOLUMNS (
+                VALUES ( Advanced_Calendar[Date] ),
+                "Rate", CALCULATE ( AVERAGE ( NBG_Rates[Rate] ) ),
+                "Base", [Base_Date_Rate],
+                "InWindow", [Freq_Filter]
+            ),
+            [InWindow] = 1 && NOT ISBLANK ( [Rate] )
+        ),
+        TREATAS ( { "1Y" }, Frequency[Period] ),
+        Mapping[Currency] = "USD",
+        Mapping[Is_Listed] = 1
+    )
+RETURN
+    ROW (
+        "Points", COUNTROWS ( _pts ),
+        "FirstDate", MINX ( _pts, Advanced_Calendar[Date] ),
+        "LastDate", MAXX ( _pts, Advanced_Calendar[Date] ),
+        "BaseMin", MINX ( _pts, [Base] ),
+        "BaseMax", MAXX ( _pts, [Base] ),
+        "Title", CALCULATE ( [Title_Cur_to_Gel], Mapping[Currency] = "USD" )
+    )
+
+// T4 · Line chart (change vs GEL) — one series per comparison currency, 1Y
+// Expect: each series ~366 points, FirstGrowth = 0, LastGrowth USD −4.1% · EUR −7.1% · GBP −4.4% · TRY −18.7%
+EVALUATE
+GENERATE (
+    SELECTCOLUMNS ( { "USD", "EUR", "GBP", "TRY" }, "Code", [Value] ),
+    VAR _code = [Code]
+    VAR _pts =
+        CALCULATETABLE (
+            FILTER (
+                ADDCOLUMNS (
+                    VALUES ( Advanced_Calendar[Date] ),
+                    "Growth", [Growth_R],
+                    "Rate", CALCULATE ( AVERAGE ( NBG_Rates[Rate] ) ),
+                    "InWindow", [Freq_Filter]
+                ),
+                [InWindow] = 1 && NOT ISBLANK ( [Rate] ) && [Growth] <> -1
+            ),
+            TREATAS ( { "1Y" }, Frequency[Period] ),
+            Mapping[Currency] = _code,
+            Mapping[Is_Listed] = 1
+        )
+    RETURN
+        ROW (
+            "Points", COUNTROWS ( _pts ),
+            "FirstGrowth", MAXX ( TOPN ( 1, _pts, Advanced_Calendar[Date], ASC ), [Growth] ),
+            "LastGrowth", MAXX ( TOPN ( 1, _pts, Advanced_Calendar[Date], DESC ), [Growth] ),
+            "Subtitle", CALCULATE ( [Base_Date], TREATAS ( { "1Y" }, Frequency[Period] ) )
+        )
+)
+
+// T5 · Latest official rates tables (overview + daily page)
+// Expect: 42 rows (every listed currency with a current rate; BGN dropped), and 0 rows missing a
+//         flag, Georgian name or change (structure)
+EVALUATE
+VAR _rows =
+    CALCULATETABLE (
+        FILTER (
+            ADDCOLUMNS (
+                VALUES ( Mapping[Currency] ),
+                "Rate", [Last_Date_Rate],
+                "Change", [Rate_Diff],
+                "Flag", CALCULATE ( MAX ( Mapping[Flag_URL] ) ),
+                "Name", CALCULATE ( MAX ( Mapping[Currency_Long] ) )
+            ),
+            NOT ISBLANK ( [Rate] )
+        ),
+        Mapping[Is_Listed] = 1
+    )
+RETURN
+    ROW (
+        "Rows", COUNTROWS ( _rows ),
+        "MissingFlag", COUNTROWS ( FILTER ( _rows, ISBLANK ( [Flag] ) ) ),
+        "MissingName", COUNTROWS ( FILTER ( _rows, ISBLANK ( [Name] ) ) ),
+        "MissingChange", COUNTROWS ( FILTER ( _rows, ISBLANK ( [Change] ) ) ),
+        "Title", [Title_Ex_Rate]
+    )
+
+// T6 · Daily table — 1Y window
+// Expect: ~366 date rows ending 12-10-2026, 42 currency columns, AMD on 09-10-2026 = 7.1808 (per 1000),
+//         weekend font colours: Sat dark #666666 / light #8A857C, Fri dark #FFFFFF / light #22201C
+EVALUATE
+VAR _dates =
+    CALCULATETABLE (
+        FILTER (
+            ADDCOLUMNS ( VALUES ( Advanced_Calendar[Date] ), "InWindow", [Freq_Filter], "N", CALCULATE ( COUNTROWS ( NBG_Rates ) ) ),
+            [InWindow] = 1 && [N] > 0
+        ),
+        TREATAS ( { "1Y" }, Frequency[Period] ),
+        Mapping[Is_Listed] = 1
+    )
+RETURN
+    ROW (
+        "DateRows", COUNTROWS ( _dates ),
+        "FirstDate", MINX ( _dates, Advanced_Calendar[Date] ),
+        "LastDate", MAXX ( _dates, Advanced_Calendar[Date] ),
+        "CurrencyColumns", CALCULATE ( DISTINCTCOUNT ( NBG_Rates[Currency] ), Advanced_Calendar[Date] = DATE ( 2026, 10, 9 ), Mapping[Is_Listed] = 1 ),
+        "AMD_2026_10_09", CALCULATE ( AVERAGE ( NBG_Rates[Rate] ), Mapping[Currency] = "AMD", Advanced_Calendar[Date] = DATE ( 2026, 10, 9 ) ),
+        "Sat_Dark", CALCULATE ( [Weekend_Font_Color], Advanced_Calendar[Date] = DATE ( 2026, 10, 10 ) ),
+        "Sat_Light", CALCULATE ( [Weekend_Font_Color_Light], Advanced_Calendar[Date] = DATE ( 2026, 10, 10 ) ),
+        "Fri_Dark", CALCULATE ( [Weekend_Font_Color], Advanced_Calendar[Date] = DATE ( 2026, 10, 9 ) ),
+        "Fri_Light", CALCULATE ( [Weekend_Font_Color_Light], Advanced_Calendar[Date] = DATE ( 2026, 10, 9 ) )
+    )
+
+// T7 · Monthly table — USD
+// Expect: months 2001-01 … 2026-09 (unfinished 2026-10 hidden), 2026-09 = end 2.6051 · avg 2.6114 ·
+//         min 2.6051 · max 2.6250
+EVALUATE
+VAR _months =
+    CALCULATETABLE (
+        FILTER (
+            ADDCOLUMNS (
+                VALUES ( Advanced_Calendar[Year_MM] ),
+                "Shown", [Flag_EOMonth],
+                "EndOfMonth", [End_of_Month_ExRate],
+                "Avg", CALCULATE ( AVERAGE ( NBG_Rates[Rate] ) ),
+                "Min", CALCULATE ( MIN ( NBG_Rates[Rate] ) ),
+                "Max", CALCULATE ( MAX ( NBG_Rates[Rate] ) )
+            ),
+            [Shown] = 1 && NOT ISBLANK ( [Avg] )
+        ),
+        Mapping[Currency] = "USD",
+        Mapping[Is_Listed] = 1
+    )
+VAR _sep = FILTER ( _months, Advanced_Calendar[Year_MM] = "2026-09" )
+RETURN
+    ROW (
+        "Months", COUNTROWS ( _months ),
+        "FirstMonth", MINX ( _months, Advanced_Calendar[Year_MM] ),
+        "LastMonth", MAXX ( _months, Advanced_Calendar[Year_MM] ),
+        "Sep_End", MAXX ( _sep, [EndOfMonth] ),
+        "Sep_Avg", MAXX ( _sep, [Avg] ),
+        "Sep_Min", MAXX ( _sep, [Min] ),
+        "Sep_Max", MAXX ( _sep, [Max] )
+    )
+
+// T8 · Slicer contents
+// Expect: 43 currencies in the currency slicers (USD first), defaults present, periods 1M…YTD in order
+EVALUATE
+ROW (
+    "CurrencyItems", CALCULATE ( COUNTROWS ( VALUES ( Mapping[Currency_Desc] ) ), Mapping[Is_Listed] = 1 ),
+    "FirstItem", MINX ( TOPN ( 1, FILTER ( ALL ( Mapping ), Mapping[Is_Listed] = 1 ), Mapping[Sort_Order], ASC ), Mapping[Currency_Desc] ),
+    "DefaultsPresent", CALCULATE ( COUNTROWS ( Mapping ),
+        Mapping[Currency_Desc] IN { "USD აშშ დოლარი", "EUR ევრო", "GBP დიდი ბრიტანეთის გირვანქა სტერლინგი", "TRY თურქული ლირა" } ),
+    "Periods", CONCATENATEX ( Frequency, Frequency[Period], ",", Frequency[Period_Order], ASC )
+)

@@ -1,0 +1,61 @@
+table NBG_Rates
+	lineageTag: adb6bf7e-10f7-4294-ac6f-12286084fd5d
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 68f7a184-7ff2-4257-b610-332e35631015
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Currency
+		dataType: string
+		lineageTag: 7f753bb0-71b9-4b9e-aa57-924e1935dca1
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rate
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 270fd731-4a7f-42a6-94b6-b14caad16645
+		summarizeBy: sum
+		sourceColumn: Rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Normalized_Rate = ```
+			
+			DIVIDE(
+			    NBG_Rates[Rate],
+			    RELATED(Mapping[Division])
+			)
+			
+			```
+		formatString: 0.0000
+		lineageTag: ed3a79e4-308a-4c98-bc06-de467398a14d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition NBG_Rates = m
+		mode: import
+		source =
+				let
+				    // Once NBG rolls the current year into the history file, the live file wins for overlapping dates
+				    LiveStart = List.Min(NBG_Rates_Web_Source[Date]),
+				    History = Table.SelectRows(NBG_Rates_Historical_Rates, each [Date] < LiveStart),
+				    Source = Table.Combine({History, NBG_Rates_Web_Source}),
+				    #"Sorted Date&Currency Columns" = Table.Sort(Source,{{"Date", Order.Descending}, {"Currency", Order.Ascending}})
+				in
+				    #"Sorted Date&Currency Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
