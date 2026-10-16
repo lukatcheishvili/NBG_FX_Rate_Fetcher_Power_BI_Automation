@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Info_Open_Page_1_Light_En",
+  "name": "d5c24ae6e44d84d9552d",
+  "options": {
+    "targetVisualNames": [
+      "2da0e273dc41f961e358",
+      "01f1e290aa9d02e6328e"
+    ],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "3bff48a15dcc535c3484",
+    "sections": {
+      "3bff48a15dcc535c3484": {
+        "visualContainers": {
+          "2da0e273dc41f961e358": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "01f1e290aa9d02e6328e": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          }
+        },
+        "visualContainerGroups": {}
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

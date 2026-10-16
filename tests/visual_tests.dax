@@ -180,3 +180,15 @@ ROW (
         Mapping[Currency_Desc] IN { "USD აშშ დოლარი", "EUR ევრო", "GBP დიდი ბრიტანეთის გირვანქა სტერლინგი", "TRY თურქული ლირა" } ),
     "Periods", CONCATENATEX ( Frequency, Frequency[Period], ",", Frequency[Period_Order], ASC )
 )
+
+// T9 · English names (language button)
+// Expect: 0 listed currencies without an English name (Currency_Long_En would fall back to the bare code),
+// and the default slicer values exist in the English column
+EVALUATE
+ROW (
+    "MissingEnglishName", CALCULATE ( COUNTROWS ( Mapping ), Mapping[Is_Listed] = 1, Mapping[Currency_Long_En] = Mapping[Currency] ),
+    "EnglishItems", CALCULATE ( COUNTROWS ( VALUES ( Mapping[Currency_Desc_En] ) ), Mapping[Is_Listed] = 1 ),
+    "DefaultsPresent", CALCULATE ( COUNTROWS ( Mapping ),
+        Mapping[Currency_Desc_En] IN { "USD US Dollar", "EUR Euro", "GBP Pound Sterling", "TRY Turkish Lira" } ),
+    "FirstItem", MINX ( TOPN ( 1, FILTER ( ALL ( Mapping ), Mapping[Is_Listed] = 1 ), Mapping[Sort_Order], ASC ), Mapping[Currency_Desc_En] )
+)

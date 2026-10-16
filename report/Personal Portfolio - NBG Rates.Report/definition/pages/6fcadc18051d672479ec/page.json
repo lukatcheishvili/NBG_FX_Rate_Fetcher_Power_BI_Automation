@@ -5,87 +5,6 @@
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,
-  "pageBinding": {
-    "name": "0d6f9b6b1c7554bbbdbf",
-    "type": "Default",
-    "parameters": []
-  },
-  "objects": {
-    "background": [
-      {
-        "properties": {
-          "color": {
-            "solid": {
-              "color": {
-                "expr": {
-                  "Literal": {
-                    "Value": "'#EFEEEA'"
-                  }
-                }
-              }
-            }
-          },
-          "transparency": {
-            "expr": {
-              "Literal": {
-                "Value": "0D"
-              }
-            }
-          }
-        }
-      }
-    ],
-    "outspace": [
-      {
-        "properties": {
-          "color": {
-            "solid": {
-              "color": {
-                "expr": {
-                  "Literal": {
-                    "Value": "'#EFEEEA'"
-                  }
-                }
-              }
-            }
-          },
-          "transparency": {
-            "expr": {
-              "Literal": {
-                "Value": "0D"
-              }
-            }
-          }
-        }
-      }
-    ],
-    "displayArea": [
-      {
-        "properties": {
-          "verticalAlignment": {
-            "expr": {
-              "Literal": {
-                "Value": "'Middle'"
-              }
-            }
-          }
-        }
-      }
-    ]
-  },
-  "visibility": "HiddenInViewMode",
-  "visualInteractions": [
-    {
-      "source": "81f96c8db1d18984d321",
-      "target": "bfaaceb21020fe20f3cf",
-      "type": "NoFilter"
-    },
-    {
-      "source": "bfaaceb21020fe20f3cf",
-      "target": "2bb21666f54fef83de85",
-      "type": "NoFilter"
-    }
-  ],
   "filterConfig": {
     "filters": [
       {
@@ -144,5 +63,86 @@
         "isHiddenInViewMode": true
       }
     ]
-  }
+  },
+  "pageBinding": {
+    "name": "a21a899a3af0243bc09a",
+    "type": "Default",
+    "parameters": []
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#E1E2E0'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspace": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#E1E2E0'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "displayArea": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Middle'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "81f96c8db1d18984d321",
+      "target": "bfaaceb21020fe20f3cf",
+      "type": "NoFilter"
+    },
+    {
+      "source": "bfaaceb21020fe20f3cf",
+      "target": "2bb21666f54fef83de85",
+      "type": "NoFilter"
+    }
+  ]
 }

@@ -6,7 +6,7 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["fnNbgParseSheet","NBG_Live_Sheet","NBG_History_Sheet","NBG_Rates_Web_Source","Mapping","NBG_Rates_Historical_Rates","NBG_Rates"]
+annotation PBI_QueryOrder = ["fnNbgParseSheet","NBG_Live_Sheet","NBG_History_Sheet","NBG_Live_Sheet_En","NBG_History_Sheet_En","NBG_Rates_Web_Source","Mapping","NBG_Rates_Historical_Rates","NBG_Rates"]
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 

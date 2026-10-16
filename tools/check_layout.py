@@ -4,7 +4,9 @@ Checks, per page:
   bounds      every visual lies inside the 1280x720 canvas
   overlap     no two visuals overlap, except content placed fully inside a background shape
               that sits below it (z-order)
-  hidden      no visual is hidden (the design has no toggled panels)
+  hidden      no visual is hidden, except the info pop-up (text box + close button) that the Info_* bookmarks toggle;
+              the pop-up must stay inside the canvas, fit its text (wrapped) and be readable
+  twins       every twin page (light / English) has exactly the dark Georgian page's visual positions
   grid        content cards use the 24px outer margin, end at the right/bottom margins, and keep
               16px gutters; filter-bar slicers share y/height; KPI tiles and nav icon buttons are
               equal-sized and evenly spaced
@@ -22,9 +24,12 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from make_light_pages import DARK_PAGES, VARIANTS, vid   # noqa: E402  (variant id scheme)
+
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "report", "Personal Portfolio - NBG Rates.Report", "definition")
 W, H, MARGIN, GUTTER = 1280, 720, 24, 16
-CONTENT_TOP = 132   # below nav (56) and filter bar (68..120)
+CONTENT_TOP = 144   # below nav (56) and filter bar (68..132)
 
 
 def load(p):
@@ -68,7 +73,11 @@ class Page:
     def __init__(self, pdir):
         self.page = load(os.path.join(pdir, "page.json"))
         self.name = self.page["displayName"]
-        self.visuals = [load(f) for f in glob.glob(os.path.join(pdir, "visuals", "*", "visual.json"))]
+        every = [load(f) for f in glob.glob(os.path.join(pdir, "visuals", "*", "visual.json"))]
+        bookmarks = [load(f) for f in glob.glob(os.path.join(ROOT, "bookmarks", "*.bookmark.json"))]
+        toggled = {n for b in bookmarks if b["displayName"].startswith("Info_") for n in b["options"].get("targetVisualNames", [])}
+        self.popups = [v for v in every if v.get("isHidden") and v["name"] in toggled]
+        self.visuals = [v for v in every if v not in self.popups]
         bg = self.page.get("objects", {}).get("background", [{}])[0].get("properties", {}).get("color")
         self.canvas = hexcolor(bg) or "#FFFFFF"
         self.errors, self.warnings = [], []
@@ -96,11 +105,11 @@ class Page:
 
     # ---------------------------------------------------------------- checks
     def check_bounds_hidden(self):
-        for v in self.visuals:
+        for v in self.visuals + self.popups:
             x, y, x2, y2 = self.rect(v)
             if x < 0 or y < 0 or x2 > W + 0.5 or y2 > H + 0.5:
                 self.errors.append(f"out of canvas: {self.label(v)}")
-            if v.get("isHidden"):
+            if v.get("isHidden") and v not in self.popups:
                 self.errors.append(f"hidden: {self.label(v)}")
 
     def check_overlaps(self):
@@ -196,6 +205,23 @@ class Page:
                         if need > w:
                             self.errors.append(f"text fit: button label needs ~{need:.0f}px, button is {w:.0f}px: {self.label(v)}")
 
+    def check_popups(self):
+        for v in self.popups:
+            vis = v["visual"]
+            w, h = self.rect(v)[2] - self.rect(v)[0], self.rect(v)[3] - self.rect(v)[1]
+            if self.kind(v) != "textbox":
+                continue
+            pad = {k: float(lit(e).rstrip("D")) for k, e in vis["visualContainerObjects"]["padding"][0]["properties"].items()}
+            avail = w - pad["left"] - pad["right"]
+            need = pad["top"] + pad["bottom"]
+            for p in vis["objects"]["general"][0]["properties"]["paragraphs"]:
+                runs = p["textRuns"]
+                px = max(pt_to_px(float(r["textStyle"].get("fontSize", "10pt").rstrip("pt"))) for r in runs)
+                need_w = sum(text_width(r["value"], pt_to_px(float(r["textStyle"].get("fontSize", "10pt").rstrip("pt")))) for r in runs)
+                need += max(1, -(-need_w // (avail - (20 if p.get("listType") else 0)))) * px * 1.35
+            if need > h + 0.5:
+                self.errors.append(f"text fit: pop-up text needs ~{need:.0f}px height, box is {h:.0f}px: {self.label(v)}")
+
     def surface_under(self, v):
         """Colour of the nearest background under a visual: own background, enclosing shape, or the page."""
         vco = (v.get("visual") or {}).get("visualContainerObjects", {})
@@ -215,7 +241,7 @@ class Page:
         return best[1] if best else self.canvas
 
     def check_contrast(self):
-        for v in self.visuals:
+        for v in self.visuals + self.popups:
             vis = v.get("visual") or {}
             bg = self.surface_under(v)
             checks = []   # (colour, font size pt)
@@ -252,8 +278,28 @@ class Page:
         self.check_overlaps()
         self.check_grid()
         self.check_text_fit()
+        self.check_popups()
         self.check_contrast()
         return self
+
+
+def rects(pdir):
+    return {v["name"]: tuple(round(v["position"][k], 2) for k in ("x", "y", "width", "height")) for v in
+            (load(f) for f in glob.glob(os.path.join(pdir, "visuals", "*", "visual.json")))}
+
+
+def check_twins():
+    """Every twin page keeps the dark Georgian page's visual positions exactly."""
+    errors = []
+    for dark in DARK_PAGES:
+        src = rects(os.path.join(ROOT, "pages", dark))
+        for variant in VARIANTS:
+            twin = rects(os.path.join(ROOT, "pages", vid(variant, dark)))
+            want = {vid(variant, n): r for n, r in src.items()}
+            if twin != want:
+                diff = [n for n in want if twin.get(n) != want[n]] + [n for n in twin if n not in want]
+                errors.append(f"twins: {variant[0]}-{variant[1]} of page {dark[:6]} differs from the dark page in {len(diff)} visual(s)")
+    return errors
 
 
 def main():

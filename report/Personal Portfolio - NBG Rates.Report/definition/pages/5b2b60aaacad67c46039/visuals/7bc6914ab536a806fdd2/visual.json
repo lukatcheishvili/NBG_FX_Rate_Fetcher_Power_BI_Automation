@@ -352,21 +352,21 @@
             "type": {
               "expr": {
                 "Literal": {
-                  "Value": "'PageNavigation'"
+                  "Value": "'Bookmark'"
                 }
               }
             },
-            "navigationSection": {
+            "bookmark": {
               "expr": {
                 "Literal": {
-                  "Value": "'5b2b60aaacad67c46039'"
+                  "Value": "'caec463a978e3c1a8acc'"
                 }
               }
             },
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'ცხრილი - ოფიციალური საშუალოთვიური გაცვლითი კურსები · პერიოდულობა: ყოველდღიური · საერთო ფილტრები: · პერიოდის შუალედი · ვალუტა · მონაცემები ხელმისაწვდომია 2001 წლის იანვრიდან'"
+                  "Value": "'ინფორმაცია'"
                 }
               }
             },
