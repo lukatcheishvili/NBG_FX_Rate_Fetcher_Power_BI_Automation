@@ -16,13 +16,16 @@ This file has two parts:
 - Both sheets share one layout. The row containing `USD` holds the ISO codes, the row above it the units (K), and the row above that the Georgian names. Dates start on the next row. The shared function `fnNbgParseSheet` parses either sheet and returns `Rates` and `Currencies`.
 - Never hard-code currency columns. Currencies come and go (BGN was dropped on 2026-01-01).
 - Where both files cover the same date, the live file wins.
+- English currency names come from NBG's English twins of the two files (`exchange_rates/eng/official-daily-exchange-rateseng.xlsx`, sheet `E`, and `exratesyearseng.xlsx`, sheet `2001-`). They have the same layout, so `fnNbgParseSheet` parses them too (`NBG_Live_Sheet_En`, `NBG_History_Sheet_En`). They are used for names only, never for rates.
 - `Rate` is per K units (e.g. AMD per 1,000). `Normalized_Rate` is per 1 unit. The units always come from the source files.
 
 ### Model (TMDL)
 - `Mapping` is built from the two files' header rows (code, units, Georgian name). The live file's values win for current currencies, and the history file supplies retired codes (DEM, ROL, BYR, …).
+- English: `Mapping[Currency_Long_En]` (sorted by `Name_Sort_Order_En`) and `Currency_Desc_En` ("USD US Dollar"). Names are looked up by code; a code missing from the English files falls back to the code itself. Codes that share a Georgian name (BYR/BYN, TMM/TMT) share the English name of the code NBG still publishes. Test T9 checks that no listed currency fell back.
 - `Mapping[Is_Listed]` = 1 when a currency was quoted in the last 24 months. Every page filters on it, which matches NBG's currency lists.
 - Sort order: USD, EUR and GBP first, then the rest by code. **Sort columns are built in Power Query, not DAX.** Sorting a column by a DAX column derived from it is a circular dependency.
 - New measures go in `Metrics` with `displayFolder: NBG Report`. Never change the old measures.
+- Every Georgian text measure has an English twin named `<measure>_En`: `Base_Date_En`, `Title_Ex_Rate_En`, `Compare_Caption_En`, `Title_Cur_to_Gel_En`. When a Georgian one changes, change its twin too.
 - Period window: `Window_End` is the latest rate date within the date slicer. `Window_Start` is `Window_End` minus 1M/3M/6M/1Y/5Y, or Jan 1 for YTD, never earlier than the slicer start.
 - `Rate_Diff` compares with the previous **weekday**. Weekend and Monday dates carry Friday's rate, so 12/10/2026 compares with 09/10/2026. Public holidays aren't excluded.
 - Monthly average = the mean over **all calendar days** in the month. This matches NBG (September 2026 USD: 2.6114).
@@ -37,12 +40,14 @@ This file has two parts:
 - After any report remap, validate: every JSON file parses; no `RateDD`, `CL_Cur`, `Calendar`, `Country_Flags` or `_Measures` references remain; every bookmark, group and interaction target exists.
 
 ### Report structure
-- Three pages, with Georgian labels: **ოფიციალური კურსები** (overview), **ყოველდღიური ცხრილი** (daily table) and **საშუალოთვიური ცხრილი** (monthly table).
+- Three pages, with Georgian labels (and an English twin of each, see "Twin pages"): **ოფიციალური კურსები** (overview), **ყოველდღიური ცხრილი** (daily table) and **საშუალოთვიური ცხრილი** (monthly table).
 - No NBG branding: no logo, background image, contact panel, address or phone.
 - Slicer defaults: Frequency = 1Y. Currency = USD. Comparison = USD, EUR, GBP and TRY.
 - Slicer isolation (NBG's `visualInteractions`): the currency dropdown filters only the area chart, the comparison list filters only the line chart, and the latest-rates table follows only the date slicer.
 - KPI cards on the overview always show **USD, EUR, GBP and RUB**, each through a visual-level filter. They ignore every slicer except the date slicer (`NoFilter` interactions).
-- Navigation: three page buttons in the top nav (`PageNavigation`). Pages 2 and 3 stay hidden from the page list. The reset button applies the page's `Home_Page_x` bookmark. The Info button shows NBG's help text as a tooltip.
+- Navigation: three page buttons in the top nav (`PageNavigation`). Pages 2 and 3 stay hidden from the page list. The reset button applies the page's `Home_Page_x` bookmark.
+- Info button: opens a pop-up panel (card colour, 1px hairline, 8px corners) with NBG's help text, bold labels, bullets and an italic footer; its ✕ closes it. The panel is a text box plus a close button, both `isHidden`, toggled by the `Info_Open_Page_x` / `Info_Close_Page_x` bookmarks (display only, `suppressData`, so no slicer is touched). It sits at x 880, y 68, 376 wide, ends on the 24px right margin and grows with its text. It has z 4000 (close button 4001), above every page visual (they stop at z 3012), but Desktop still drew tables and slicers over it. Its height uses a 1.6 line-height estimate, because 1.4 made the text box scroll. Its last line names the creator (`CREATOR` in the script). The English texts are the ones NBG shows on its English report.
+- A visual that has a line (`outline`) colour needs `selector: {id: default}` on the colour and weight properties. Without it Desktop falls back to the theme's first data colour, blue.
 - Theme: `StaticResources/RegisteredResources/NBG_Ferrari.json`, registered as the custom theme on top of the `CY24SU10` base theme. Every visual also carries explicit formatting in the design-system colours.
 
 ### Design system (Ferrari-inspired, see `docs/design/ferrari.md`)
@@ -66,37 +71,41 @@ Workflow: **design in Figma first, get approval, then build in Power BI.**
 - **Elevation:** brightness steps and 1px hairlines only. No drop shadows.
 - **Canvas:** 1280 × 720.
 - **Layout:** a 56px top navigation bar (title left, 3 page tabs right, active tab underlined in red), then one filter bar above the content, then content cards. No left rail.
-  - Filter bar: y 68, height 52.
-  - KPI row: y 132, height 96, 4 × 296 wide.
-  - Overview: charts 840 wide at y 244 and y 482; latest-rates panel at x 880, 376 wide.
-  - Daily: table 840 × 572 plus the side panel.
-  - Monthly: table full width, 1232 × 572.
-- **Nav icon buttons** (☀/☾ mode toggle, reset ↺, info ⓘ): all 32×32 at y 12, x 1144 / 1184 / 1224 (8px gaps, 24px right margin), and all with the same container settings (no background, padding 0/0/2/2, no border, 4px corners). Text-based icons also get zero text margins so they centre like the built-in icons.
+  - Filter bar: y 68, height 64 (label and input of a slicer need about 60px; at 52 the input poked out of the card border).
+  - Filter bar slicers (overview): period x 24 (228 wide), currency 268 (200), frequency 484 (360), compare 860 (206). The frequency slicer needs 360 so all seven chips (1M … YTD) fit; at 330 the YTD chip was cut to "Y…". On the daily page the frequency slicer is at x 268, 360 wide.
+  - KPI row: y 144, height 96, 4 × 296 wide.
+  - Overview: charts 840 wide at y 256 and y 494; latest-rates panel at x 880, 376 wide.
+  - Daily: table 840 × 560 plus the side panel.
+  - Monthly: table full width, 1232 × 560.
+- **Nav row:** tabs at x 552 / 728 / 904 (widths 168 / 168 / 184, ending at 1088, 16px before the first icon). The underline of the active tab starts 14px inside its tab.
+- **Nav icon buttons** (language EN/ქა, ☀/🌛 mode toggle, reset ↺, info ⓘ): all 32×32 at y 12, x 1104 / 1144 / 1184 / 1224 (8px gaps, 24px right margin), and all with the same container settings (no background, padding 0/0/2/2, no border, 4px corners). Text-based icons also get zero text margins so they centre like the built-in icons.
 - **Font sizes** (Power BI points): titles 11 semibold, labels 7.5–8, values 9, KPI numbers 21.
 - **Up/down:** always shown as an arrow plus a sign, never by colour alone.
 
-### Light mode (generated twin pages)
-- Each dark page has a **light twin** (hidden in the page list). In the top nav, ☀ opens the twin and ☾ returns to the dark page. Slicer pairs share a `syncGroup` (`sync_<dark slicer name>`), so selections carry over between modes.
-- **The dark pages are the source of truth.** Never edit light pages by hand. After changing a dark page, close Desktop and run `python tools/make_light_pages.py`. The script is idempotent: page and visual IDs are hashes of the dark IDs, and it also clones each `Home_Page_x` reset bookmark as `Home_Page_x_Light`.
-- Light pages: `df5bbb2d…` (overview), `a759698f…` (daily), `6fcadc18…` (monthly).
-- The light palette is warm and low-glare: no pure white or black, depth from soft brightness steps and hairlines. It was approved from a Figma mock after two earlier versions (plain white, then an Airbnb-based palette, see `docs/design/airbnb.md`) proved too bright. Text contrast was checked on the card colour `#FAF9F7`.
+### Twin pages (generated: light and English)
+- Each dark Georgian page has three **twins**, hidden in the page list: light-ka, dark-en and light-en (12 pages in all). ☀ / 🌛 switches mode and keeps the language; **EN / ქა** switches language and keeps the mode.
+- Slicer pairs share a `syncGroup` (`sync_<dark slicer name>`), so date and period selections carry over between all four variants. The **currency** slicers on the English pages filter a different column (`Currency_Desc_En`), so they sit in their own group (`…_en`): switching language resets the currency picks to the defaults (USD; USD/EUR/GBP/TRY).
+- **The dark Georgian pages are the source of truth.** Never edit a twin by hand. After changing a dark page, close Desktop and run `python tools/make_light_pages.py`. It is idempotent: IDs are hashes of the dark IDs (`light:`, `en:` and `light-en:` prefixes), and each `Home_Page_x` reset bookmark is cloned as `_Light`, `_En` and `_Light_En`.
+- The English transform (`to_english` in the script) translates every static string through `TEXT_EN` and `CURRENCY_EN`, and renames the model fields that have an `_En` twin. The script fails if any Georgian text is left on an English page (apart from the ქა label), so a new Georgian string needs a `TEXT_EN` entry.
+- Light-ka pages: `df5bbb2d…` (overview), `a759698f…` (daily), `6fcadc18…` (monthly).
+- The light palette ("Stone", v4) is a calm, low-glare neutral grey: no pure white or black, depth from soft brightness steps and hairlines. History: plain white and an Airbnb-based palette were too bright; v3 was a warm off-white (`#FAF9F7` cards on `#EFEEEA`) approved from a Figma mock, but still read as too bright in Desktop. v4 was chosen on 2026-10-16 from a side-by-side mock of three calmer options (Sand, Stone, Taupe). Text contrast is checked on the card colour `#EBECEA`.
 
 | Dark | Light | Role |
 |---|---|---|
-| `#181818` | `#EFEEEA` | canvas (warm grey) |
-| `#222222` | `#FAF9F7` | card (warm off-white), with a `#E2DFD9` hairline border |
-| `#303030` | `#E2DFD9` | elevated surfaces, hairlines, table grid lines |
-| `#FFFFFF` | `#22201C` | ink (15.5:1) |
-| `#969696` | `#5F5B54` | body (6.4:1) |
-| `#666666` | `#8A857C` | muted (3.5:1) |
-| `#2C2C2A` | `#E8E5E0` | chart grid |
-| `#F0EFEC` | `#22201C` | area line |
-| `#DA291C` | `#DA291C` | accent, unchanged in both modes (4.6:1) |
-| `#FF5A4F` | `#B42318` | rate up (6.3:1) |
-| `#22B066` | `#0E7A43` | rate down (5.1:1) |
-| `#3987E5` `#D95926` `#199E70` `#C98500` `#D55181` | `#2A78D6` `#EB6834` `#1BAF7A` `#EDA100` `#E87BA4` | series (validated in light mode; colours below 3:1 are relieved by direct series labels) |
+| `#181818` | `#E1E2E0` | canvas (soft stone grey) |
+| `#222222` | `#EBECEA` | card (light stone), with a `#CFD1CE` hairline border |
+| `#303030` | `#D9DBD8` | elevated surfaces (inputs, button fills), table grid lines |
+| `#FFFFFF` | `#20221F` | ink (13.5:1) |
+| `#969696` | `#50544F` | body (6.5:1) |
+| `#666666` | `#737772` | muted (3.8:1) |
+| `#2C2C2A` | `#D6D8D5` | chart grid |
+| `#F0EFEC` | `#20221F` | area line |
+| `#DA291C` | `#DA291C` | accent, unchanged in both modes (4.1:1, used for the underline and the base-date line, not for text) |
+| `#FF5A4F` | `#B42318` | rate up (5.5:1) |
+| `#22B066` | `#0E7A43` | rate down (4.6:1) |
+| `#3987E5` `#D95926` `#199E70` `#C98500` `#D55181` | `#2A78D6` `#EB6834` `#1BAF7A` `#EDA100` `#E87BA4` | series (colours below 3:1 are relieved by direct series labels) |
 
-- Weekend dimming in light mode uses `Weekend_Font_Color_Light` (`#8A857C` on weekends, `#22201C` otherwise).
+- Weekend dimming in light mode uses `Weekend_Font_Color_Light` (`#737772` on weekends, `#20221F` otherwise).
 - Chart tooltips keep NBG's dark `#333333` style in both modes.
 - The mapping lives in `PALETTE` in `tools/make_light_pages.py`; `soften()` adds the hairline card borders (corners stay 8px, as in dark mode).
 
@@ -108,8 +117,9 @@ Workflow: **design in Figma first, get approval, then build in Power BI.**
 - Text uses text colours, never the series colour.
 
 ### Quality checks (run before every hand-off; Desktop closed for the first two)
-- `python tools/check_layout.py` runs static checks on all 6 pages. It must PASS:
-  - every visual is inside the 1280×720 canvas and none is hidden
+- `python tools/check_layout.py` runs static checks on all 12 pages. It must PASS:
+  - every visual is inside the 1280×720 canvas and none is hidden, apart from the info pop-up (which must fit its text and be readable)
+  - every twin page has exactly the dark page's visual positions
   - no overlaps, except content placed inside a background shape that sits below it
   - 24px margins and 16px gutters, an aligned filter bar, equal KPI tiles and nav icons
   - text fits its box (Georgian width estimate)
@@ -120,6 +130,33 @@ Workflow: **design in Figma first, get approval, then build in Power BI.**
 ---
 
 ## 2. Log
+
+### 2026-10-16
+
+**Promo clip (LinkedIn)**
+- `tools/make_clip.py` renders a 24 s, 1080p, 30 fps MP4 (`video/nbg-fx-what-changed.mp4`) from the screenshots in `reference/Comparison/` (`NBG OLD` = NBG's report, `Current` = ours light, `Current dark` = ours dark; English pages). Scenes: hero, before/after slider (Official rates, then Daily table) with annotations, a dark-theme switch (cursor clicks the toggle, circular reveal), a language switch, a features list, end card.
+- The first version looked generated (rounded cards, drop shadows, dot pills, red everywhere). The rebuild follows the Oracle design system (`npx getdesign@latest add oracle`, saved as `docs/design/oracle.md`) strictly: flat full-bleed bands, square corners, no shadows or gradients, Georgia display type, the gold rule as the only ornament, Oracle's focus colour for highlights, animated topographic contour lines as the hero pattern, and red used once (our own mark on the end card). The Oracle logo and wordmark are not used (trademark). The dashboard itself keeps the Ferrari-based design; Oracle is only for the clip.
+- Type: Georgia plus Source Sans 3 (OFL, `video/fonts`) standing in for Oracle Sans, which is proprietary.
+- Higgsfield: the CLI is installed and signed in, but video generation needs a paid plan (the free plan returned `job_minimum_basic_plan_required`, no credits spent), so the contour animation is procedural instead.
+- Needs `pip install imageio-ffmpeg` (bundles the encoder; `contourpy` comes with matplotlib). `python tools/make_clip.py --still <seconds>` saves single frames for review.
+- The clip says "Personal project, not affiliated with the National Bank of Georgia", because it shows NBG's report.
+
+**Language button, info pop-up and light-mode KPI border**
+- New **EN / ქა** button in the nav row, at x 1104. Tabs and their underline moved 40px left (now 552 / 728 / 904), so the four icons and the three tabs sit on one grid. It jumps to an English twin of the page (or back); mode and the date and period selections carry over.
+- Model: `NBG_Live_Sheet_En` and `NBG_History_Sheet_En` read NBG's English files; `Mapping` gets `Currency_Long_En`, `Name_Sort_Order_En` and `Currency_Desc_En`; `Metrics` gets `Base_Date_En`, `Title_Ex_Rate_En`, `Compare_Caption_En` and `Title_Cur_to_Gel_En`. Test T9 added. The TMDL loads (7 tables, 44 measures); the M still has to be refreshed in Desktop.
+- `tools/make_light_pages.py` now builds three twins per page (light-ka, dark-en, light-en): 12 pages and 36 bookmarks. It is idempotent, and it fails on any Georgian text left on an English page.
+- Decision: currency slicers are not synced across languages, because their field differs. Switching language resets the currency picks. The alternative (show only the ISO code in the slicers) was offered and not chosen.
+- Info button: now a pop-up panel with formatted text (bold, bullets, italic) instead of a plain tooltip; Georgian text from NBG's own info box, English text from NBG's English report.
+- **Fix:** the light-mode KPI tiles showed a blue border. The outline colour was saved without `selector: {id: default}`, so Desktop used the theme's first data colour. It now uses the grey hairline `#E2DFD9` like the other light cards (`soften()` in the script).
+- **Filter bar 52 → 64px.** A slicer's label plus its input needs about 60px, so at 52 the date input poked out of the card border. Content now starts at y 144 (the 12px gap is kept), the bottom row and the tables are 12px shorter so the bottom margin stays, and slicer padding is 2px top and bottom. Moving the cards alone couldn't fix it, because the overflow was inside the cards.
+- Dark-mode icon: the thin ☾ is now 🌛 (U+1F31B + U+FE0E, a solid moon with a face), chosen from a side-by-side comparison of eight candidates (it replaced an interim 🌑 disc). U+FE0E makes Power BI use the plain grey glyph from Segoe UI Symbol instead of the coloured emoji. If Desktop still shows it coloured, fall back to a custom filled-crescent image.
+- **Fix:** the info panel opened *under* the slicers and the latest-rates table, so part of its text was hidden. It now has z 4000, above everything, and a creator line ("Created by: Luka Tcheishvili" / "შემქმნელი: ლუკა ჭეიშვილი") closes each text.
+- **Light palette v4 "Stone".** The v3 cards (`#FAF9F7`) still read as too bright. Three calmer palettes were mocked side by side and Stone was chosen: page `#E1E2E0`, cards `#EBECEA`, inputs `#D9DBD8`, hairline `#CFD1CE`, ink `#20221F`. Dark mode is unchanged. Contrast checks pass on all 12 pages.
+- **Fix:** the colour of the change label on the KPI cards and in the latest-rates table used the wrong comparison kinds (≥0 red, >0 green, =0 grey), so a falling rate had no colour and showed as faint grey. It is now >0 red, <0 green, =0 grey (kinds 1 / 3 / 0), in both modes.
+- The info panel is simply on top again (z 4000). The earlier workaround that hid the visuals under it was removed, because it was built on a Desktop session that was still showing an old copy of the files.
+- **Fix:** the YTD chip of the frequency slicer was cut off ("Y…"). The slicer is 30px wider (360), and the slicers to its right moved over (the compare slicer on the overview is 30px narrower, so the bar still ends at x 1066).
+- `tools/check_layout.py` now covers 12 pages, the pop-up and a twin-position check. It passes, and `validate_report.py` reports no problems.
+- Still to check in Desktop: the refresh (English files), the `Mapping` English names (T9), that the pop-up opens and closes without touching the slicers, and that the sync groups carry date and period across EN/ქა and ☀/🌛.
 
 ### 2026-10-11
 

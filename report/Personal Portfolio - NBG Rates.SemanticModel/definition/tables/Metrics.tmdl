@@ -547,9 +547,27 @@ table Metrics
 
 	measure Weekend_Font_Color_Light =
 			// Light-mode twin of Weekend_Font_Color (used by the generated light pages)
-			IF ( WEEKDAY ( MAX ( Advanced_Calendar[Date] ), 2 ) > 5, "#8A857C", "#22201C" )
+			IF ( WEEKDAY ( MAX ( Advanced_Calendar[Date] ), 2 ) > 5, "#737772", "#20221F" )
 		displayFolder: NBG Report
 		lineageTag: 2f4e6a8c-1b3d-4f5a-9c7e-0d2b4f6a8c1e
+
+	measure Base_Date_En = "Base date " & FORMAT ( [Window_Start], "dd-MM-yyyy" )
+		displayFolder: NBG Report
+		lineageTag: 2c5e8b17-4a93-4d60-b1f8-7e3a9d0c6b25
+
+	measure Title_Ex_Rate_En = "Official exchange rate · " & FORMAT ( [Window_End], "dd-MM-yyyy" )
+		displayFolder: NBG Report
+		lineageTag: 7d1a4f93-8e26-4b58-9c07-3f5b2e8a1d64
+
+	measure Compare_Caption_En = "vs " & FORMAT ( [Prev_Date], "dd-MM-yyyy" )
+		displayFolder: NBG Report
+		lineageTag: a9e3c6d0-1b47-4f82-8d5a-6c2f0b7e9a13
+
+	measure Title_Cur_to_Gel_En =
+			SELECTEDVALUE ( Mapping[Division] ) & " " & SELECTEDVALUE ( Mapping[Currency] ) & " "
+			    & SELECTEDVALUE ( Mapping[Currency_Long_En] ) & " : GEL"
+		displayFolder: NBG Report
+		lineageTag: e4b0d7a2-5c38-4a91-b6f3-0d8e1c9a7f52
 
 	column Column
 		isHidden

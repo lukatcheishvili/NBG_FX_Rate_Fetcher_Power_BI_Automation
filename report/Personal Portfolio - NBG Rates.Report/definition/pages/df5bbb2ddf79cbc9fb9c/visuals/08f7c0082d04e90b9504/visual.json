@@ -3,7 +3,7 @@
   "name": "08f7c0082d04e90b9504",
   "position": {
     "x": 32,
-    "y": 136,
+    "y": 148,
     "z": 1110,
     "height": 22,
     "width": 280,
@@ -23,7 +23,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "10pt",
-                      "color": "#22201C"
+                      "color": "#20221F"
                     }
                   },
                   {
@@ -31,7 +31,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "8pt",
-                      "color": "#5F5B54"
+                      "color": "#50544F"
                     }
                   }
                 ]
@@ -150,7 +150,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EFEEEA'"
+                      "Value": "'#E1E2E0'"
                     }
                   }
                 }
@@ -161,7 +161,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EFEEEA'"
+                      "Value": "'#E1E2E0'"
                     }
                   }
                 }
@@ -172,7 +172,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#5F5B54'"
+                      "Value": "'#50544F'"
                     }
                   }
                 }

@@ -27,7 +27,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#5F5B54'"
+                      "Value": "'#50544F'"
                     }
                   }
                 }
@@ -89,7 +89,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FAF9F7'"
+                      "Value": "'#EBECEA'"
                     }
                   }
                 }
@@ -114,7 +114,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#E2DFD9'"
+                      "Value": "'#D9DBD8'"
                     }
                   }
                 }
@@ -152,7 +152,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#E2DFD9'"
+                      "Value": "'#D9DBD8'"
                     }
                   }
                 }
@@ -301,7 +301,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EFEEEA'"
+                      "Value": "'#E1E2E0'"
                     }
                   }
                 }
@@ -312,7 +312,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EFEEEA'"
+                      "Value": "'#E1E2E0'"
                     }
                   }
                 }
@@ -323,7 +323,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#5F5B54'"
+                      "Value": "'#50544F'"
                     }
                   }
                 }
@@ -352,21 +352,21 @@
             "type": {
               "expr": {
                 "Literal": {
-                  "Value": "'PageNavigation'"
+                  "Value": "'Bookmark'"
                 }
               }
             },
-            "navigationSection": {
+            "bookmark": {
               "expr": {
                 "Literal": {
-                  "Value": "'a759698f27fc098fcda1'"
+                  "Value": "'ea95c266c5a49c97e45e'"
                 }
               }
             },
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'ცხრილი - ოფიციალური ყოველდღიური გაცვლითი კურსები · პერიოდულობა: ყოველდღიური · საერთო ფილტრები: · პერიოდის შუალედი · სიხშირე · ვალუტა · მონაცემები ხელმისაწვდომია 2001 წლის იანვრიდან'"
+                  "Value": "'ინფორმაცია'"
                 }
               }
             },

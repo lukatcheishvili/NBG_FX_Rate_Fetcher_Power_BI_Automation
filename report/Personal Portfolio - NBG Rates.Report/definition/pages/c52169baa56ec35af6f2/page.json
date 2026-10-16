@@ -1,0 +1,203 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "c52169baa56ec35af6f2",
+  "displayName": "Daily table · Light",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "083897df0bc2385526c5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Mapping"
+              }
+            },
+            "Property": "Is_Listed"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "Mapping",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "m"
+                          }
+                        },
+                        "Property": "Is_Listed"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "1L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "b52cd32dcf1ec2341a8d",
+    "type": "Default",
+    "parameters": []
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#E1E2E0'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspace": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#E1E2E0'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "displayArea": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Middle'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "6dde92a9269ad818c937",
+      "target": "037aec17dadf141f2d98",
+      "type": "NoFilter"
+    },
+    {
+      "source": "de3ae4daa8e512a4a147",
+      "target": "f3c26855eec5a012ef7f",
+      "type": "DataFilter"
+    },
+    {
+      "source": "037aec17dadf141f2d98",
+      "target": "f3c26855eec5a012ef7f",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6dde92a9269ad818c937",
+      "target": "f3c26855eec5a012ef7f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f3c26855eec5a012ef7f",
+      "target": "6dde92a9269ad818c937",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f3c26855eec5a012ef7f",
+      "target": "037aec17dadf141f2d98",
+      "type": "NoFilter"
+    },
+    {
+      "source": "037aec17dadf141f2d98",
+      "target": "47402fc27f3b5f9fe9d4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "037aec17dadf141f2d98",
+      "target": "6dde92a9269ad818c937",
+      "type": "DataFilter"
+    },
+    {
+      "source": "47402fc27f3b5f9fe9d4",
+      "target": "f3c26855eec5a012ef7f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "47402fc27f3b5f9fe9d4",
+      "target": "037aec17dadf141f2d98",
+      "type": "NoFilter"
+    },
+    {
+      "source": "47402fc27f3b5f9fe9d4",
+      "target": "6dde92a9269ad818c937",
+      "type": "NoFilter"
+    },
+    {
+      "source": "6dde92a9269ad818c937",
+      "target": "59c7b78c155c8140ba9e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "037aec17dadf141f2d98",
+      "target": "59c7b78c155c8140ba9e",
+      "type": "NoFilter"
+    }
+  ]
+}

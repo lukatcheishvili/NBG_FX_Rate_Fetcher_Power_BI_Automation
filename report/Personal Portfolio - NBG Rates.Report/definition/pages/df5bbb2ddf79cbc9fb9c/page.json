@@ -5,8 +5,67 @@
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dcf473adb0a3888bf96a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Mapping"
+              }
+            },
+            "Property": "Is_Listed"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "Mapping",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "m"
+                          }
+                        },
+                        "Property": "Is_Listed"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "1L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      }
+    ]
+  },
   "pageBinding": {
-    "name": "04fd8be8292e5e51b7c5",
+    "name": "2b739ca98f1ae2b27e90",
     "type": "Default",
     "parameters": []
   },
@@ -19,7 +78,7 @@
               "color": {
                 "expr": {
                   "Literal": {
-                    "Value": "'#EFEEEA'"
+                    "Value": "'#E1E2E0'"
                   }
                 }
               }
@@ -43,7 +102,7 @@
               "color": {
                 "expr": {
                   "Literal": {
-                    "Value": "'#EFEEEA'"
+                    "Value": "'#E1E2E0'"
                   }
                 }
               }
@@ -73,6 +132,7 @@
       }
     ]
   },
+  "visibility": "HiddenInViewMode",
   "visualInteractions": [
     {
       "source": "6947cfcb70b0794a9bd4",
@@ -374,65 +434,5 @@
       "target": "9758dd2ccd6e4e3a42e6",
       "type": "NoFilter"
     }
-  ],
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "dcf473adb0a3888bf96a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Mapping"
-              }
-            },
-            "Property": "Is_Listed"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m",
-              "Entity": "Mapping",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "m"
-                          }
-                        },
-                        "Property": "Is_Listed"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "1L"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User",
-        "isHiddenInViewMode": true
-      }
-    ]
-  },
-  "visibility": "HiddenInViewMode"
+  ]
 }

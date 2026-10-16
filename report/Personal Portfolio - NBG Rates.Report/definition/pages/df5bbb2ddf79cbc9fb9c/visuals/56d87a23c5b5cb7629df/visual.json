@@ -3,7 +3,7 @@
   "name": "56d87a23c5b5cb7629df",
   "position": {
     "x": 28,
-    "y": 160,
+    "y": 172,
     "z": 1120,
     "height": 40,
     "width": 140,
@@ -34,7 +34,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#22201C'"
+                      "Value": "'#20221F'"
                     }
                   }
                 }
@@ -186,7 +186,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EFEEEA'"
+                      "Value": "'#E1E2E0'"
                     }
                   }
                 }
@@ -197,7 +197,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EFEEEA'"
+                      "Value": "'#E1E2E0'"
                     }
                   }
                 }
@@ -208,7 +208,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#5F5B54'"
+                      "Value": "'#50544F'"
                     }
                   }
                 }

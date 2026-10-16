@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "6947cfcb70b0794a9bd4",
   "position": {
-    "x": 830,
+    "x": 860,
     "y": 68,
     "z": 3003,
-    "height": 52,
-    "width": 236,
+    "height": 64,
+    "width": 206,
     "tabOrder": 3003
   },
   "visual": {
@@ -203,7 +203,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#5F5B54'"
+                      "Value": "'#50544F'"
                     }
                   }
                 }
@@ -234,7 +234,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#22201C'"
+                      "Value": "'#20221F'"
                     }
                   }
                 }
@@ -245,7 +245,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FAF9F7'"
+                      "Value": "'#EBECEA'"
                     }
                   }
                 }
@@ -283,7 +283,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#22201C'"
+                      "Value": "'#20221F'"
                     }
                   }
                 }
@@ -294,7 +294,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#E2DFD9'"
+                      "Value": "'#D9DBD8'"
                     }
                   }
                 }
@@ -347,7 +347,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FAF9F7'"
+                      "Value": "'#EBECEA'"
                     }
                   }
                 }
@@ -378,7 +378,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#E2DFD9'"
+                      "Value": "'#D9DBD8'"
                     }
                   }
                 }
@@ -426,14 +426,14 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "4D"
+                  "Value": "2D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "4D"
+                  "Value": "2D"
                 }
               }
             },
@@ -469,7 +469,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FAF9F7'"
+                      "Value": "'#EBECEA'"
                     }
                   }
                 }
@@ -480,7 +480,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FAF9F7'"
+                      "Value": "'#EBECEA'"
                     }
                   }
                 }
@@ -491,7 +491,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#5F5B54'"
+                      "Value": "'#50544F'"
                     }
                   }
                 }

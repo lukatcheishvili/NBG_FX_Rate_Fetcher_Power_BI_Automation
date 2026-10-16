@@ -127,6 +127,35 @@ table Mapping
 
 		annotation SummarizationSetBy = Automatic
 
+	column Currency_Desc_En = Mapping[Currency] & " " & Mapping[Currency_Long_En]
+		dataType: string
+		lineageTag: 8e2f6a14-3c97-4b5d-a0e8-9d1c7b4f5a36
+		summarizeBy: none
+		sortByColumn: Sort_Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency_Long_En
+		dataType: string
+		lineageTag: 1a7c9e53-6d28-4f4b-b3a0-5e8d2c9f7b61
+		summarizeBy: none
+		sourceColumn: Currency_Long_En
+		sortByColumn: Name_Sort_Order_En
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name_Sort_Order_En
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f3b8d1a6-9c42-4e70-8a5d-2b6e0c7d4f19
+		summarizeBy: none
+		sourceColumn: Name_Sort_Order_En
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Mapping = m
 		mode: import
 		source =
@@ -146,7 +175,21 @@ table Mapping
 				    // Old and new codes can share a name (TRL/TRY, ROL/RON, ...), so a name takes the lowest Sort_Order among its codes
 				    WithNameSortOrder = Table.AddColumn(WithSortOrder, "Name_Sort_Order",
 				        (row) => List.Min(Table.SelectRows(WithSortOrder, each [Currency_Long] = row[Currency_Long])[Sort_Order]), Int64.Type),
-				    Result = Table.RemoveColumns(WithNameSortOrder, {"Rank"})
+				    // English names (NBG's English files, same layout) are looked up by code; a code missing there falls back to itself
+				    LiveEn = fnNbgParseSheet(NBG_Live_Sheet_En)[Currencies],
+				    HistoryEn = fnNbgParseSheet(NBG_History_Sheet_En)[Currencies],
+				    NamesEn = Table.Distinct(Table.Combine({LiveEn, HistoryEn}), {"Currency"}),
+				    EnByCode = Record.FromList(NamesEn[Currency_Long], NamesEn[Currency]),
+				    LiveCodes = Live[Currency],
+				    WithEnRaw = Table.Buffer(Table.AddColumn(WithNameSortOrder, "En_Raw",
+				        each Record.FieldOrDefault(EnByCode, [Currency], [Currency]), type text)),
+				    // Codes that share a Georgian name (BYR/BYN, TMM/TMT) also share one English name, taken from the code NBG still publishes
+				    WithEn = Table.Buffer(Table.AddColumn(WithEnRaw, "Currency_Long_En",
+				        (row) => let live = Table.SelectRows(WithEnRaw, each [Currency_Long] = row[Currency_Long] and List.Contains(LiveCodes, [Currency]))
+				                 in if Table.RowCount(live) > 0 then live{0}[En_Raw] else row[En_Raw], type text)),
+				    WithNameSortOrderEn = Table.AddColumn(WithEn, "Name_Sort_Order_En",
+				        (row) => List.Min(Table.SelectRows(WithEn, each [Currency_Long_En] = row[Currency_Long_En])[Sort_Order]), Int64.Type),
+				    Result = Table.RemoveColumns(WithNameSortOrderEn, {"Rank", "En_Raw"})
 				in
 				    Result
 

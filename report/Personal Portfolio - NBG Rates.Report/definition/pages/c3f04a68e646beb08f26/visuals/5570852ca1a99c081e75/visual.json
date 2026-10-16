@@ -3,7 +3,7 @@
   "name": "5570852ca1a99c081e75",
   "position": {
     "x": 484,
-    "y": 166,
+    "y": 178,
     "z": 1123,
     "height": 30,
     "width": 120,
@@ -38,7 +38,7 @@
                         {
                           "Condition": {
                             "Comparison": {
-                              "ComparisonKind": 2,
+                              "ComparisonKind": 1,
                               "Left": {
                                 "Measure": {
                                   "Expression": {
@@ -65,7 +65,7 @@
                         {
                           "Condition": {
                             "Comparison": {
-                              "ComparisonKind": 1,
+                              "ComparisonKind": 3,
                               "Left": {
                                 "Measure": {
                                   "Expression": {

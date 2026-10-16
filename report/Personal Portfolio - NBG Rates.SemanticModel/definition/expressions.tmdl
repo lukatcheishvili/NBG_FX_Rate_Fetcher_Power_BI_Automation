@@ -1,6 +1,6 @@
 expression fnNbgParseSheet =
 		// Parses an NBG rates sheet: the row holding the ISO codes is found by looking for "USD";
-		// the two rows above it hold the units (K) and the Georgian names; dates start on the next row.
+		// the two rows above it hold the units (K) and the currency names (Georgian or English file); dates start on the next row.
 		// Returns [Rates = Date/Currency/Rate long table, Currencies = Currency/Division/Currency_Long].
 		(sheet as table) as record =>
 		let
@@ -48,6 +48,31 @@ expression NBG_History_Sheet =
 		in
 		    AllYears
 	lineageTag: 7e50c4f0-5ec4-43e1-aa51-ad2df6fbbb4a
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression NBG_Live_Sheet_En =
+		let
+		    Source = Excel.Workbook(Web.Contents("https://nbg.gov.ge/fm/%E1%83%A1%E1%83%A2%E1%83%90%E1%83%A2%E1%83%98%E1%83%A1%E1%83%A2%E1%83%98%E1%83%99%E1%83%90/exchange_rates/eng/official-daily-exchange-rateseng.xlsx"), null, true),
+		    E = Source{[Item="E",Kind="Sheet"]}[Data]
+		in
+		    E
+	lineageTag: 5b1d3c8e-2f6a-4c07-9e41-7a8d0c3b6f12
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression NBG_History_Sheet_En =
+		let
+		    Source = Excel.Workbook(Web.Contents("https://nbg.gov.ge/fm/%E1%83%A1%E1%83%A2%E1%83%90%E1%83%A2%E1%83%98%E1%83%A1%E1%83%A2%E1%83%98%E1%83%99%E1%83%90/exchange_rates/eng/exratesyearseng.xlsx"), null, true),
+		    // The all-years sheet is named "2001-<last full year>", so match on the prefix
+		    AllYears = Table.SelectRows(Source, each [Kind] = "Sheet" and Text.StartsWith([Item], "2001-")){0}[Data]
+		in
+		    AllYears
+	lineageTag: c4e7a9d2-8b35-4f10-a6c3-1d9e5b7f2a48
 
 	annotation PBI_NavigationStepName = Navigation
 

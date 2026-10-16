@@ -3,7 +3,7 @@
   "name": "872e742844bf0dcc1b04",
   "position": {
     "x": 172,
-    "y": 166,
+    "y": 178,
     "z": 1120,
     "height": 30,
     "width": 120,
@@ -38,7 +38,7 @@
                         {
                           "Condition": {
                             "Comparison": {
-                              "ComparisonKind": 2,
+                              "ComparisonKind": 1,
                               "Left": {
                                 "Measure": {
                                   "Expression": {
@@ -65,7 +65,7 @@
                         {
                           "Condition": {
                             "Comparison": {
-                              "ComparisonKind": 1,
+                              "ComparisonKind": 3,
                               "Left": {
                                 "Measure": {
                                   "Expression": {
@@ -112,7 +112,7 @@
                           },
                           "Value": {
                             "Literal": {
-                              "Value": "'#5F5B54'"
+                              "Value": "'#50544F'"
                             }
                           }
                         }
@@ -268,7 +268,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EFEEEA'"
+                      "Value": "'#E1E2E0'"
                     }
                   }
                 }
@@ -279,7 +279,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EFEEEA'"
+                      "Value": "'#E1E2E0'"
                     }
                   }
                 }
@@ -290,7 +290,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#5F5B54'"
+                      "Value": "'#50544F'"
                     }
                   }
                 }

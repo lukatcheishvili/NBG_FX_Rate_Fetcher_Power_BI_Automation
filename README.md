@@ -8,7 +8,7 @@ Closing rates, average rates and transaction-date rates are needed every reporti
 
 ## Report
 
-The report has three pages, each available in a dark and a light version.
+The report has three pages, each available in a dark and a light version and in Georgian and English.
 
 | Page | Contents |
 |---|---|
@@ -19,11 +19,12 @@ The report has three pages, each available in a dark and a light version.
 Navigation and controls:
 
 - The tabs in the top bar switch between pages.
-- The sun / moon button switches between dark and light mode. Filter selections are kept.
-- The reset button restores the default filters; the info button shows a short description of the page.
+- The sun / moon button switches between dark and light mode. Date and period selections are kept.
+- The EN / ქა button switches between English and Georgian. Date and period selections are kept; the currency selections return to the defaults.
+- The reset button restores the default filters; the info button opens a short description of the page, closed with ✕.
 - The period buttons (1M, 3M, 6M, 1Y, 5Y, ALL, YTD) set the base date used by the charts. Defaults: 1Y, USD, and USD / EUR / GBP / TRY for comparison.
 
-Labels follow NBG's own report and are in Georgian.
+Labels follow NBG's own report: Georgian, with English translations on the English pages.
 
 ## Data sources
 
@@ -33,6 +34,7 @@ Both files are read directly from nbg.gov.ge on every refresh:
 |---|---|
 | `official-daily-exchange-ratesgeo.xlsx` | Current year, daily |
 | `exratesyearsgeo.xlsx` (sheet `2001-...`) | 2001 to the end of last year, daily |
+| `eng/official-daily-exchange-rateseng.xlsx`, `eng/exratesyearseng.xlsx` | English currency names only (same layout) |
 
 The currency list, quotation units (for example AMD per 1,000) and Georgian currency names are taken from the files' header rows, so new or discontinued currencies do not break the refresh. Where both files cover the same date, the current-year file is used. Rates are as published by NBG; for audit purposes, verify critical figures against [nbg.gov.ge](https://nbg.gov.ge/en/monetary-policy/currency).
 
@@ -44,7 +46,7 @@ report/
   Personal Portfolio - NBG Rates.Report/         Pages, visuals, bookmarks and theme (PBIR)
   Personal Portfolio - NBG Rates.SemanticModel/  Tables, Power Query and DAX measures (TMDL)
 tools/
-  make_light_pages.py    Generates the light-mode pages from the dark ones
+  make_light_pages.py    Generates the light-mode and English pages from the dark Georgian ones
   check_layout.py        Layout checks: bounds, overlaps, alignment, text fit, contrast
   validate_report.py     Structural checks of the report definition
 tests/
@@ -71,12 +73,12 @@ Requirements: Power BI Desktop (recent version) with internet access to nbg.gov.
 
 ## Maintaining the report
 
-The dark pages are the source of truth. The light pages are generated from them and should not be edited by hand.
+The dark Georgian pages are the source of truth. The light and English pages are generated from them and should not be edited by hand.
 
 After changing the report, close Power BI Desktop and run:
 
 ```
-python tools/make_light_pages.py   # regenerate the light pages
+python tools/make_light_pages.py   # regenerate the light and English pages
 python tools/check_layout.py       # must report PASS
 python tools/validate_report.py    # must report no problems
 ```

@@ -3,9 +3,9 @@
   "name": "b2f110462acf5a121693",
   "position": {
     "x": 880,
-    "y": 132,
+    "y": 144,
     "z": 3011,
-    "height": 572,
+    "height": 560,
     "width": 376,
     "tabOrder": 3011
   },
@@ -413,7 +413,7 @@
                         {
                           "Condition": {
                             "Comparison": {
-                              "ComparisonKind": 2,
+                              "ComparisonKind": 1,
                               "Left": {
                                 "Measure": {
                                   "Expression": {
@@ -440,7 +440,7 @@
                         {
                           "Condition": {
                             "Comparison": {
-                              "ComparisonKind": 1,
+                              "ComparisonKind": 3,
                               "Left": {
                                 "Measure": {
                                   "Expression": {
