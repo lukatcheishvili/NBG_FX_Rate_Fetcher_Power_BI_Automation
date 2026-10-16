@@ -41,6 +41,7 @@ The currency list, quotation units (for example AMD per 1,000) and Georgian curr
 ## Repository structure
 
 ```
+Personal Portfolio - NBG Rates.pbix              Single-file copy of the report (open in Power BI Desktop)
 report/
   Personal Portfolio - NBG Rates.pbip            Open this file in Power BI Desktop
   Personal Portfolio - NBG Rates.Report/         Pages, visuals, bookmarks and theme (PBIR)
@@ -66,7 +67,7 @@ The report is saved as a Power BI Project (PBIP), so every page, visual and meas
 
 Requirements: Power BI Desktop (recent version) with internet access to nbg.gov.ge. Python 3.10+ is only needed for the maintenance scripts.
 
-1. Clone the repository.
+1. Clone the repository. For a quick look you can instead open the single-file copy `Personal Portfolio - NBG Rates.pbix` in the repository root.
 2. Open `report/Personal Portfolio - NBG Rates.pbip` in Power BI Desktop.
 3. Select Refresh. The first refresh downloads the full rate history and can take a minute or two.
 4. If prompted for data source credentials for nbg.gov.ge, choose Anonymous; set the privacy level to Public.
