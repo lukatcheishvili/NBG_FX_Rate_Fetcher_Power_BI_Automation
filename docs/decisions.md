@@ -133,6 +133,14 @@ Workflow: **design in Figma first, get approval, then build in Power BI.**
 
 ### 2026-10-16
 
+**Promo clip (LinkedIn)**
+- `tools/make_clip.py` renders a 24 s, 1080p, 30 fps MP4 (`video/nbg-fx-what-changed.mp4`) from the screenshots in `reference/Comparison/` (`NBG OLD` = NBG's report, `Current` = ours light, `Current dark` = ours dark; English pages). Scenes: hero, before/after slider (Official rates, then Daily table) with annotations, a dark-theme switch (cursor clicks the toggle, circular reveal), a language switch, a features list, end card.
+- The first version looked generated (rounded cards, drop shadows, dot pills, red everywhere). The rebuild follows the Oracle design system (`npx getdesign@latest add oracle`, saved as `docs/design/oracle.md`) strictly: flat full-bleed bands, square corners, no shadows or gradients, Georgia display type, the gold rule as the only ornament, Oracle's focus colour for highlights, animated topographic contour lines as the hero pattern, and red used once (our own mark on the end card). The Oracle logo and wordmark are not used (trademark). The dashboard itself keeps the Ferrari-based design; Oracle is only for the clip.
+- Type: Georgia plus Source Sans 3 (OFL, `video/fonts`) standing in for Oracle Sans, which is proprietary.
+- Higgsfield: the CLI is installed and signed in, but video generation needs a paid plan (the free plan returned `job_minimum_basic_plan_required`, no credits spent), so the contour animation is procedural instead.
+- Needs `pip install imageio-ffmpeg` (bundles the encoder; `contourpy` comes with matplotlib). `python tools/make_clip.py --still <seconds>` saves single frames for review.
+- The clip says "Personal project, not affiliated with the National Bank of Georgia", because it shows NBG's report.
+
 **Language button, info pop-up and light-mode KPI border**
 - New **EN / ქა** button in the nav row, at x 1104. Tabs and their underline moved 40px left (now 552 / 728 / 904), so the four icons and the three tabs sit on one grid. It jumps to an English twin of the page (or back); mode and the date and period selections carry over.
 - Model: `NBG_Live_Sheet_En` and `NBG_History_Sheet_En` read NBG's English files; `Mapping` gets `Currency_Long_En`, `Name_Sort_Order_En` and `Currency_Desc_En`; `Metrics` gets `Base_Date_En`, `Title_Ex_Rate_En`, `Compare_Caption_En` and `Title_Cur_to_Gel_En`. Test T9 added. The TMDL loads (7 tables, 44 measures); the M still has to be refreshed in Desktop.
