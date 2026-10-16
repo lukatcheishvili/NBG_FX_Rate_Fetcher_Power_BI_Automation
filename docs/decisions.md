@@ -72,6 +72,7 @@ Workflow: **design in Figma first, get approval, then build in Power BI.**
 - **Canvas:** 1280 × 720.
 - **Layout:** a 56px top navigation bar (title left, 3 page tabs right, active tab underlined in red), then one filter bar above the content, then content cards. No left rail.
   - Filter bar: y 68, height 64 (label and input of a slicer need about 60px; at 52 the input poked out of the card border).
+  - Filter bar slicers (overview): period x 24 (228 wide), currency 268 (200), frequency 484 (360), compare 860 (206). The frequency slicer needs 360 so all seven chips (1M … YTD) fit; at 330 the YTD chip was cut to "Y…". On the daily page the frequency slicer is at x 268, 360 wide.
   - KPI row: y 144, height 96, 4 × 296 wide.
   - Overview: charts 840 wide at y 256 and y 494; latest-rates panel at x 880, 376 wide.
   - Daily: table 840 × 560 plus the side panel.
@@ -145,6 +146,7 @@ Workflow: **design in Figma first, get approval, then build in Power BI.**
 - **Light palette v4 "Stone".** The v3 cards (`#FAF9F7`) still read as too bright. Three calmer palettes were mocked side by side and Stone was chosen: page `#E1E2E0`, cards `#EBECEA`, inputs `#D9DBD8`, hairline `#CFD1CE`, ink `#20221F`. Dark mode is unchanged. Contrast checks pass on all 12 pages.
 - **Fix:** the colour of the change label on the KPI cards and in the latest-rates table used the wrong comparison kinds (≥0 red, >0 green, =0 grey), so a falling rate had no colour and showed as faint grey. It is now >0 red, <0 green, =0 grey (kinds 1 / 3 / 0), in both modes.
 - The info panel is simply on top again (z 4000). The earlier workaround that hid the visuals under it was removed, because it was built on a Desktop session that was still showing an old copy of the files.
+- **Fix:** the YTD chip of the frequency slicer was cut off ("Y…"). The slicer is 30px wider (360), and the slicers to its right moved over (the compare slicer on the overview is 30px narrower, so the bar still ends at x 1066).
 - `tools/check_layout.py` now covers 12 pages, the pop-up and a twin-position check. It passes, and `validate_report.py` reports no problems.
 - Still to check in Desktop: the refresh (English files), the `Mapping` English names (T9), that the pop-up opens and closes without touching the slicers, and that the sync groups carry date and period across EN/ქა and ☀/🌛.
 
